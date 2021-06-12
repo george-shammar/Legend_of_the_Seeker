@@ -1,1 +1,1 @@
-(()=>{var e=document.createElement("div");e.textContent="I was put here by JavaScript!",document.body.appendChild(e)})();
+(()=>{"use strict";var e;(e=document.createElement("div")).textContent="Somebody else did this work!",document.body.appendChild(e)})();

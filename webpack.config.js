@@ -25,5 +25,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'typeof CANVAS_RENDERER': JSON.stringify(true),
+      'typeof WEBGL_RENDERER': JSON.stringify(true)
+    })
+  ]
 }
