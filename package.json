@@ -19,5 +19,10 @@
   "devDependencies": {
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "phaser": "^3.55.2"
   }
 }
