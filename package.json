@@ -1,0 +1,19 @@
+{
+  "name": "legend_of_the_seeker",
+  "version": "1.0.0",
+  "description": "A phaser3 adventure game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/george-shammar/Legend_of_the_Seeker.git"
+  },
+  "author": "George Gbenle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/george-shammar/Legend_of_the_Seeker/issues"
+  },
+  "homepage": "https://github.com/george-shammar/Legend_of_the_Seeker#readme"
+}
