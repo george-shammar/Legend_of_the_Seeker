@@ -4,7 +4,11 @@ export default class PreloaderScene extends Phaser.Scene {
   constructor () {
     super('Preloader');
   }
- 
+  
+  init () {
+    this.readyCount = 0;
+  }
+
   preload () {
 
     // add logo image
@@ -82,7 +86,16 @@ this.load.image('blueButton2', 'assets/ui/blue_button03.png');
 this.load.image('phaserLogo', 'assets/logo.png');
   
 }
- 
-  create () {
+
+ready () {
+  this.readyCount++;
+  if (this.readyCount === 2) {
+    this.scene.start('Title');
   }
+}
+
+
+create () {
+}
+
 };
