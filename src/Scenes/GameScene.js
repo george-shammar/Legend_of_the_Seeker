@@ -9,15 +9,25 @@ export default class GameScene extends Phaser.Scene {
 
 
   create () {
-    this.add.image(650, 350, 'world');
-
     let player;
+    let platforms;
 
+    //Add background world.
+    this.add.image(650, 300, 'world');
+
+    //Add platform
+    platforms = this.physics.add.staticGroup();
+    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+
+    
+
+    //Add player sprite.
     player = this.physics.add.sprite(100, 450, 'girl');
     
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
 
+    //Add animation for player sprite.
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 3 }),
