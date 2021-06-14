@@ -11,11 +11,8 @@ export default class GameScene extends Phaser.Scene {
 
   create () {
     let player;
-    let platforms;
     let mud;
-    let groundleft;
     let groundmiddle;
-    let groundright;
  
     
 
@@ -23,17 +20,14 @@ export default class GameScene extends Phaser.Scene {
     this.add.image(650, 300, 'world');
  
     //Add platform
-    platforms = this.physics.add.staticGroup();
-    platforms.create(855, 187, 'ground').setScale(1).refreshBody();
-
-    groundleft = this.physics.add.staticGroup();
-    groundleft.create(300, 187, 'groundleft').setScale(1).refreshBody();
-   
     groundmiddle = this.physics.add.staticGroup();
-    groundmiddle.create(440, 187, 'groundmiddle').setScale(1).refreshBody();
+    groundmiddle.create(310, 188, 'groundmiddle').setScale(1).refreshBody();
+    groundmiddle.create(450, 188, 'groundmiddle').setScale(1).refreshBody();
+    groundmiddle.create(580, 188, 'groundmiddle').setScale(1).refreshBody();
+    groundmiddle.create(855, 188, 'groundmiddle').setScale(1).refreshBody();
+    groundmiddle.create(1200, 188, 'groundmiddle').setScale(1).refreshBody();
+    groundmiddle.create(1122, 187, 'groundmiddle').setScale(1).refreshBody();
 
-    groundright = this.physics.add.staticGroup();
-    groundright.create(580, 187, 'groundright').setScale(1).refreshBody();
 
     mud = this.physics.add.staticGroup();
     mud.create(450, 568, 'mud').setScale(2).refreshBody();
