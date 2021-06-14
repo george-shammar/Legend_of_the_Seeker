@@ -66,7 +66,7 @@ export default class GameScene extends Phaser.Scene {
     //   repeat: -1
     // });
 
-    // this.physics.add.collider(player, mud, platforms);
+    this.physics.add.collider(player, mud, groundmiddle);
     // cursors = this.input.keyboard.createCursorKeys();
     
 
