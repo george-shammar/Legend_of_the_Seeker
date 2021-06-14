@@ -12,6 +12,7 @@ export default class GameScene extends Phaser.Scene {
     let player;
     let platforms;
     let mud;
+    let cursors;
     
 
     //Add background world.
@@ -32,7 +33,17 @@ export default class GameScene extends Phaser.Scene {
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
 
+    this.physics.add.collider(player, mud, platforms);
+
     //Add animation for player sprite.
+
+    this.anims.create({
+      key: 'right',
+      frames: this.anims.generateFrameNumbers('girl', { start: 5, end: 8 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 3 }),
@@ -45,12 +56,9 @@ export default class GameScene extends Phaser.Scene {
         frames: [ { key: 'girl', frame: 4 } ],
         frameRate: 20
     });
-
-    this.anims.create({
-        key: 'right',
-        frames: this.anims.generateFrameNumbers('girl', { start: 5, end: 8 }),
-        frameRate: 10,
-        repeat: -1
-    });
   }
+
+
+
+
 };
