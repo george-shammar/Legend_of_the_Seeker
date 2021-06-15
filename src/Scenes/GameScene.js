@@ -89,22 +89,18 @@ export default class GameScene extends Phaser.Scene {
         if (this.cursors.left.isDown)
         {
             player.setVelocityX(-140);
-
             player.anims.play('left', true);
         }
         else if (this.cursors.right.isDown)
         {
             player.setVelocityX(140);
-
             player.anims.play('right', true);
         }
         else
         {
             player.setVelocityX(0);
-
             player.anims.play('turn');
         }
-
         if (this.cursors.up.isDown && player.body.touching.down)
         {
             player.setVelocityY(-750);
@@ -112,8 +108,8 @@ export default class GameScene extends Phaser.Scene {
     }
 
 
- collectTomato(player, tomato)
-  {
-      tomato.disableBody(true, true);
-  }
+    collectTomato(player, tomato)
+      {
+          tomato.disableBody(true, true);
+      }
 };
