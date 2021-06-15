@@ -41,6 +41,7 @@ export default class GameScene extends Phaser.Scene {
     //Add player sprite.
     player = this.physics.add.sprite(100, 450, 'girl').setScale(2);
     
+    
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
     player.body.setGravityY(300);
