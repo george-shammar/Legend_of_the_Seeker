@@ -84,6 +84,8 @@ export default class GameScene extends Phaser.Scene {
 
     this.cursors = this.input.keyboard.createCursorKeys();
 
+    this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+
   }
 
   update ()
@@ -112,6 +114,10 @@ export default class GameScene extends Phaser.Scene {
 
     collectTomato(player, tomato)
       {
-          tomato.disableBody(true, true);
+        
+        tomato.disableBody(true, true);
+
+          score += 100;
+          this.scoreText.setText('Score: ' + score);
       }
 };
