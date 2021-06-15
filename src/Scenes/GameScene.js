@@ -1,16 +1,14 @@
 import 'phaser';
+    
 
-
-
-let cursors;
-
+let player;
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
   }
 
   create() {
-    let player;
+   
     let mud;
     let groundmiddle;
     let tomato;
@@ -79,8 +77,35 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(tomato, mud);
     this.physics.add.collider(tomato, groundmiddle);
 
-    cursors = this.input.keyboard.createCursorKeys();
+    this.cursors = this.input.keyboard.createCursorKeys();
 
   }
+
+  update ()
+    {
+        if (this.cursors.left.isDown)
+        {
+            player.setVelocityX(-140);
+
+            player.anims.play('left', true);
+        }
+        else if (this.cursors.right.isDown)
+        {
+            player.setVelocityX(140);
+
+            player.anims.play('right', true);
+        }
+        else
+        {
+            player.setVelocityX(0);
+
+            player.anims.play('turn');
+        }
+
+        if (this.cursors.up.isDown && player.body.touching.down)
+        {
+            player.setVelocityY(-750);
+        }
+    }
 
 };
