@@ -2,6 +2,8 @@ import 'phaser';
     
 
 let player;
+let score = 0;
+let scoreText;
 
 export default class GameScene extends Phaser.Scene {
   constructor () {
