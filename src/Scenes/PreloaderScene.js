@@ -86,6 +86,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('world', 'assets/platform.png');
     this.load.image('groundmiddle', 'assets/groundmiddle.png');
     this.load.image('mud', 'assets/mud.png');
+    this.load.image('mud', 'assets/spikedball.png');
     this.load.image('tomato', 'assets/tomato.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
