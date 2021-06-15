@@ -2,13 +2,13 @@ import 'phaser';
     
 
 let player;
+
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
   }
 
   create() {
-   
     let mud;
     let groundmiddle;
     let tomato;
@@ -77,6 +77,9 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(tomato, mud);
     this.physics.add.collider(tomato, groundmiddle);
 
+    //Pick up tomatoes
+    this.physics.add.overlap(player, tomato, this.collectTomato, null, this);
+
     this.cursors = this.input.keyboard.createCursorKeys();
 
   }
@@ -108,4 +111,9 @@ export default class GameScene extends Phaser.Scene {
         }
     }
 
+
+ collectTomato(player, tomato)
+  {
+      tomato.disableBody(true, true);
+  }
 };
