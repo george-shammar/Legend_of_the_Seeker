@@ -4,6 +4,9 @@ import 'phaser';
 let player;
 let score = 0;
 let scoreText;
+let bombs;
+let gameOver = false;
+let tomatoes;
 
 export default class GameScene extends Phaser.Scene {
   constructor () {
@@ -13,7 +16,7 @@ export default class GameScene extends Phaser.Scene {
   create() {
     let mud;
     let groundmiddle;
-    let tomato;
+   
     
 
     //Add background world.
@@ -63,29 +66,33 @@ export default class GameScene extends Phaser.Scene {
     });
 
     //Add fruits
-    tomato = this.physics.add.group({
+    tomatoes = this.physics.add.group({
       key: 'tomato',
-      repeat: 25,
+      repeat: 15,
       setXY: { x: 12, y: 0, stepX: 70 }
     });
 
-    tomato.children.iterate(function (child) {
+    tomatoes.children.iterate(function (child) {
       child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
     });
 
     //Set colliders
     this.physics.add.collider(player, mud);
     this.physics.add.collider(player, groundmiddle);
-    this.physics.add.collider(tomato, mud);
-    this.physics.add.collider(tomato, groundmiddle);
+    this.physics.add.collider(tomatoes, mud);
+    this.physics.add.collider(tomatoes, groundmiddle);
 
     //Pick up tomatoes
-    this.physics.add.overlap(player, tomato, this.collectTomato, null, this);
+    this.physics.add.overlap(player, tomatoes, this.collectTomato, null, this);
 
     this.cursors = this.input.keyboard.createCursorKeys();
 
     this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
+    bombs = this.physics.add.group();
+    this.physics.add.collider(bombs, mud);
+    this.physics.add.collider(bombs, groundmiddle);
+    this.physics.add.collider(player, bombs, this.hitBomb, null, this);
   }
 
   update ()
@@ -114,10 +121,33 @@ export default class GameScene extends Phaser.Scene {
 
     collectTomato(player, tomato)
       {
-        
         tomato.disableBody(true, true);
-
-          score += 100;
-          this.scoreText.setText('Score: ' + score);
+        score += 100;
+        this.scoreText.setText('Score: ' + score);
+        
+        if (tomatoes.countActive(true) < 3)
+        
+          {
+            //  A new batch of stars to collect
+            tomatoes.children.iterate(function (child) {
+            child.enableBody(true, child.x, 0, true, true);
+            });
+    
+            const x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+    
+            const bomb = bombs.create(x, 16, 'bomb');
+            bomb.setBounce(1);
+            bomb.setCollideWorldBounds(true);
+            bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+            bomb.allowGravity = false;
+          }
       }
+    
+    hitBomb(player, bomb)
+    {
+      this.physics.pause();
+      player.setTint(0xff0000);
+      player.anims.play('turn');
+      gameOver = true;
+    }
 };
