@@ -65,7 +65,7 @@ export default class GameScene extends Phaser.Scene {
     //Add fruits
     tomato = this.physics.add.group({
       key: 'tomato',
-      repeat: 11,
+      repeat: 25,
       setXY: { x: 12, y: 0, stepX: 70 }
     });
 
