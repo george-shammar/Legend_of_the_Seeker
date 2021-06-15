@@ -20,7 +20,8 @@ export default class GameScene extends Phaser.Scene {
     
 
     //Add background world.
-    this.add.image(650, 300, 'world');
+      this.add.image(650, 300, 'world');
+    
  
     //Add platform
     groundmiddle = this.physics.add.staticGroup();
@@ -125,7 +126,7 @@ export default class GameScene extends Phaser.Scene {
         score += 100;
         this.scoreText.setText('Score: ' + score);
         
-        if (tomatoes.countActive(true) < 3)
+        if (tomatoes.countActive(true) < 7)
         
           {
             //  A new batch of stars to collect
@@ -149,5 +150,13 @@ export default class GameScene extends Phaser.Scene {
       player.setTint(0xff0000);
       player.anims.play('turn');
       gameOver = true;
+      this.gameSwitch();
     }
+
+    gameSwitch() {
+      if(gameOver === true) {
+        this.add.image(650, 300, 'gameOver');
+      }
+    }
+
 };
