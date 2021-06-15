@@ -118,7 +118,7 @@ export default class GameScene extends Phaser.Scene {
    
   //  this.input.stopPropagation();
   //  // start battle 
-  //  this.scene.switch('BattleScene');
+  //  this.scene.switch('Battle');
   // }
 
 
