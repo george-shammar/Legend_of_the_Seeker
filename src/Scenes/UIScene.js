@@ -164,8 +164,12 @@ var HeroesMenu = new Phaser.Class({
     
     initialize:
             
-    function HeroesMenu(x, y, scene) {
-        Menu.call(this, x, y, scene);                    
+    function ActionsMenu(x, y, scene) {
+        Menu.call(this, x, y, scene);   
+        this.addMenuItem('Attack');
+    },
+    confirm: function() {      
+        this.scene.events.emit('SelectEnemies');        
     }
 });
  
