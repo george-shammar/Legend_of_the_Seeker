@@ -202,7 +202,7 @@ var EnemiesMenu = new Phaser.Class({
     function EnemiesMenu(x, y, scene) {
         Menu.call(this, x, y, scene);        
     },       
-    confirm: function() {        
-        // do something when the player selects an enemy
+    confirm() {        
+        this.scene.events.emit("Enemy", this.menuItemIndex);
     }
 });
