@@ -51,6 +51,9 @@ export default class UIScene extends Phaser.Scene {
         this.events.on("Enemy", this.onEnemy, this);
 
         this.battleScene.nextTurn();
+
+        this.message = new Message(this, this.battleScene.events);
+        this.add.existing(this.message);
     }
     onEnemy(index) {
         this.heroesMenu.deselect();
