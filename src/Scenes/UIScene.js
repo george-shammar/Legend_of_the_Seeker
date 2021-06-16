@@ -41,6 +41,8 @@ export default class UIScene extends Phaser.Scene {
 
         this.remapHeroes();
         this.remapEnemies();
+
+        this.input.keyboard.on('keydown', this.onKeyInput, this);
     }
     remapHeroes() {
         var heroes = this.battleScene.heroes;
