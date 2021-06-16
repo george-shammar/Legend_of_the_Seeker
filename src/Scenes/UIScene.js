@@ -52,6 +52,19 @@ export default class UIScene extends Phaser.Scene {
         var enemies = this.battleScene.enemies;
         this.enemiesMenu.remap(enemies);
     }
+    onKeyInput(event) {
+        if(this.currentMenu) {
+            if(event.code === "ArrowUp") {
+                this.currentMenu.moveSelectionUp();
+            } else if(event.code === "ArrowDown") {
+                this.currentMenu.moveSelectionDown();
+            } else if(event.code === "ArrowRight" || event.code === "Shift") {
+ 
+            } else if(event.code === "Space" || event.code === "ArrowLeft") {
+                this.currentMenu.confirm();
+            } 
+        }
+    }
     
 }
 
