@@ -36,6 +36,8 @@ export default class UIScene extends Phaser.Scene {
         this.menus.add(this.heroesMenu);
         this.menus.add(this.actionsMenu);
         this.menus.add(this.enemiesMenu);
+
+        this.battleScene = this.scene.get('BattleScene');
     }
 }
 
