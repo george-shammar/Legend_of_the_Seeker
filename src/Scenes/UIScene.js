@@ -15,11 +15,11 @@ export default class UIScene extends Phaser.Scene {
         this.graphics.strokeRect(457, 500, 100, 100);
         this.graphics.fillRect(457, 500, 100, 100);
 
-        this.graphics.strokeRect(557, 500, 100, 100);
-        this.graphics.fillRect(557, 500, 100, 100);
+        this.graphics.strokeRect(557, 530, 100, 70);
+        this.graphics.fillRect(557, 530, 100, 70);
 
-        this.graphics.strokeRect(650, 500, 100, 100);
-        this.graphics.fillRect(650, 500, 100, 100);
+        this.graphics.strokeRect(660, 530, 100, 70);
+        this.graphics.fillRect(660, 530, 100, 70);
 
 
         // basic container to hold all menus
