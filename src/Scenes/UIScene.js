@@ -38,7 +38,19 @@ export default class UIScene extends Phaser.Scene {
         this.menus.add(this.enemiesMenu);
 
         this.battleScene = this.scene.get('BattleScene');
+        
+        this.remapHeroes();
+        this.remapEnemies();
     }
+    remapHeroes() {
+        var heroes = this.battleScene.heroes;
+        this.heroesMenu.remap(heroes);
+    }
+    remapEnemies() {
+        var enemies = this.battleScene.enemies;
+        this.enemiesMenu.remap(enemies);
+    }
+    
 }
 
 
@@ -108,7 +120,21 @@ var Menu = new Phaser.Class({
     },
     confirm: function() {
         // when the player confirms his slection, do the action
-    }   
+    },
+    clear: function() {
+        for(var i = 0; i < this.menuItems.length; i++) {
+            this.menuItems[i].destroy();
+        }
+        this.menuItems.length = 0;
+        this.menuItemIndex = 0;
+    },
+    remap: function(units) {
+        this.clear();        
+        for(var i = 0; i < units.length; i++) {
+            var unit = units[i];
+            this.addMenuItem(unit.type);
+        }
+    }
 });
 
 var HeroesMenu = new Phaser.Class({
