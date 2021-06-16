@@ -25,9 +25,9 @@ export default class UIScene extends Phaser.Scene {
         // basic container to hold all menus
         this.menus = this.add.container();
                 
-        this.heroesMenu = new HeroesMenu(195, 153, this);           
+        this.heroesMenu = new HeroesMenu(680, 545, this);         
         this.actionsMenu = new ActionsMenu(580, 545, this);            
-        this.enemiesMenu = new EnemiesMenu(8, 153, this);   
+        this.enemiesMenu = new EnemiesMenu(480, 545, this);
         
         // the currently selected menu 
         this.currentMenu = this.actionsMenu;
@@ -38,7 +38,7 @@ export default class UIScene extends Phaser.Scene {
         this.menus.add(this.enemiesMenu);
 
         this.battleScene = this.scene.get('BattleScene');
-        
+
         this.remapHeroes();
         this.remapEnemies();
     }
