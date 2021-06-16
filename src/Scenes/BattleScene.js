@@ -10,7 +10,7 @@ export default class BattleScene extends Phaser.Scene {
     create()
     { 
        // change the background to green
-       this.cameras.main.setBackgroundColor('rgba(0, 200, 0, 0.5)');
+       this.add.image(650, 300, 'battlebg');
         
        // player character - warrior
        var warrior = new PlayerCharacter(this, 250, 50, 'girl', 1, 'Warrior', 100, 20);        
