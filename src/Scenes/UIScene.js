@@ -105,11 +105,11 @@ var MenuItem = new Phaser.Class({
         Phaser.GameObjects.Text.call(this, scene, x, y, text, { color: '#ffffff', align: 'left', fontSize: 15});
     },
     
-    select: function() {
+    select() {
         this.setColor('#f8ff38');
     },
     
-    deselect: function() {
+    deselect() {
         this.setColor('#ffffff');
     }
     
@@ -128,19 +128,19 @@ var Menu = new Phaser.Class({
         this.x = x;
         this.y = y;
     },     
-    addMenuItem: function(unit) {
+    addMenuItem(unit) {
         var menuItem = new MenuItem(0, this.menuItems.length * 20, unit, this.scene);
         this.menuItems.push(menuItem);
         this.add(menuItem);        
     },            
-    moveSelectionUp: function() {
+    moveSelectionUp() {
         this.menuItems[this.menuItemIndex].deselect();
         this.menuItemIndex--;
         if(this.menuItemIndex < 0)
             this.menuItemIndex = this.menuItems.length - 1;
         this.menuItems[this.menuItemIndex].select();
     },
-    moveSelectionDown: function() {
+    moveSelectionDown() {
         this.menuItems[this.menuItemIndex].deselect();
         this.menuItemIndex++;
         if(this.menuItemIndex >= this.menuItems.length)
@@ -148,7 +148,7 @@ var Menu = new Phaser.Class({
         this.menuItems[this.menuItemIndex].select();
     },
     // select the menu as a whole and an element with index from it
-    select: function(index) {
+    select(index) {
         if(!index)
             index = 0;
         this.menuItems[this.menuItemIndex].deselect();
@@ -156,21 +156,21 @@ var Menu = new Phaser.Class({
         this.menuItems[this.menuItemIndex].select();
     },
     // deselect this menu
-    deselect: function() {        
+    deselect() {        
         this.menuItems[this.menuItemIndex].deselect();
         this.menuItemIndex = 0;
     },
-    confirm: function() {
+    confirm() {
         // when the player confirms his slection, do the action
     },
-    clear: function() {
+    clear() {
         for(var i = 0; i < this.menuItems.length; i++) {
             this.menuItems[i].destroy();
         }
         this.menuItems.length = 0;
         this.menuItemIndex = 0;
     },
-    remap: function(units) {
+    remap(units) {
         this.clear();        
         for(var i = 0; i < units.length; i++) {
             var unit = units[i];
@@ -188,7 +188,7 @@ var HeroesMenu = new Phaser.Class({
         Menu.call(this, x, y, scene);   
         this.addMenuItem('Attack');
     },
-    confirm: function() {      
+    confirm() {      
         this.scene.events.emit('SelectEnemies');        
     }
 });
@@ -202,8 +202,9 @@ var ActionsMenu = new Phaser.Class({
         Menu.call(this, x, y, scene);   
         this.addMenuItem('Attack');
     },
-    confirm: function() {
+    confirm() {
         // do something when the player selects an action
+        this.scene.events.emit("SelectEnemies");  
     }
     
 });
@@ -240,14 +241,14 @@ const Message = new Phaser.Class({
         events.on("Message", this.showMessage, this);
         this.visible = false;
     },
-    showMessage: function(text) {
+    showMessage(text) {
         this.text.setText(text);
         this.visible = true;
         if(this.hideEvent)
             this.hideEvent.remove(false);
         this.hideEvent = this.scene.time.addEvent({ delay: 2000, callback: this.hideMessage, callbackScope: this });
     },
-    hideMessage: function() {
+    hideMessage() {
         this.hideEvent = null;
         this.visible = false;
     }
