@@ -47,6 +47,17 @@ export default class UIScene extends Phaser.Scene {
         this.battleScene.events.on("PlayerSelect", this.onPlayerSelect, this);
 
         this.events.on("SelectEnemies", this.onSelectEnemies, this);
+
+        this.events.on("Enemy", this.onEnemy, this);
+
+        this.battleScene.nextTurn();
+    }
+    onEnemy(index) {
+        this.heroesMenu.deselect();
+        this.actionsMenu.deselect();
+        this.enemiesMenu.deselect();
+        this.currentMenu = null;
+        this.battleScene.receivePlayerSelection('attack', index);
     }
     onSelectEnemies() {
         this.currentMenu = this.enemiesMenu;
