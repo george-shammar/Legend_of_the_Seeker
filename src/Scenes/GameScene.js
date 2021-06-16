@@ -182,7 +182,7 @@ export default class GameScene extends Phaser.Scene {
       player.anims.play('turn');
       // gameOver = true;
       // this.gameSwitch();
-      this.scene.start('BattleScene');
+      this.scene.switch('BattleScene');
     }
 
     gameSwitch() {
