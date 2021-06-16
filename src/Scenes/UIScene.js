@@ -45,6 +45,12 @@ export default class UIScene extends Phaser.Scene {
         this.input.keyboard.on('keydown', this.onKeyInput, this);
 
         this.battleScene.events.on("PlayerSelect", this.onPlayerSelect, this);
+
+        this.events.on("SelectEnemies", this.onSelectEnemies, this);
+    }
+    onSelectEnemies() {
+        this.currentMenu = this.enemiesMenu;
+        this.enemiesMenu.select(0);
     }
     onPlayerSelect(id) {
         this.heroesMenu.select(id);
