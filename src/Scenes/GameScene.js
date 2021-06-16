@@ -118,7 +118,7 @@ export default class GameScene extends Phaser.Scene {
    
   //   this.input.stopPropagation();
   //   // start battle 
-  //   this.scene.switch('Battle');
+  //   this.scene.switch('BattleScene');
   // }
 
 
@@ -178,13 +178,14 @@ export default class GameScene extends Phaser.Scene {
       player.setTint(0xff0000);
       player.anims.play('turn');
       gameOver = true;
-      this.gameSwitch();
+      this.scene.switch('BattleScene');
+      // this.gameSwitch();
     }
 
-    gameSwitch() {
-      if(gameOver === true) {
-        this.add.image(650, 300, 'gameOver');
-      }
-    }
+    // gameSwitch() {
+    //   if(gameOver === true) {
+    //     this.add.image(650, 300, 'gameOver');
+    //   }
+    // }
 
 };
