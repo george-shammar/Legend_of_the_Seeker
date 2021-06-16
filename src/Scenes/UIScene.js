@@ -46,6 +46,11 @@ export default class UIScene extends Phaser.Scene {
 
         this.battleScene.events.on("PlayerSelect", this.onPlayerSelect, this);
     }
+    onPlayerSelect(id) {
+        this.heroesMenu.select(id);
+        this.actionsMenu.select(0);
+        this.currentMenu = this.actionsMenu;
+    }
     remapHeroes() {
         var heroes = this.battleScene.heroes;
         this.heroesMenu.remap(heroes);
