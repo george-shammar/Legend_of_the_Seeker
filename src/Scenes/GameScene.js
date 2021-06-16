@@ -96,6 +96,9 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(bombs, groundmiddle);
     this.physics.add.collider(player, bombs, this.hitBomb, null, this);
 
+    
+
+
     // where the enemies will be
     // this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
     // for(var i = 0; i < 30; i++) {
@@ -177,15 +180,15 @@ export default class GameScene extends Phaser.Scene {
       this.physics.pause();
       player.setTint(0xff0000);
       player.anims.play('turn');
-      gameOver = true;
-      this.scene.switch('BattleScene');
+      // gameOver = true;
       // this.gameSwitch();
+      this.scene.start('BattleScene');
     }
 
-    // gameSwitch() {
-    //   if(gameOver === true) {
-    //     this.add.image(650, 300, 'gameOver');
-    //   }
-    // }
+    gameSwitch() {
+      if(gameOver === true) {
+        this.add.image(650, 300, 'gameOver');
+      }
+    }
 
 };
