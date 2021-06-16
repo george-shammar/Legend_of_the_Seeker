@@ -7,6 +7,7 @@ import TitleScene from './Scenes/TitleScene';
 import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import BattleScene from './Scenes/BattleScene';
+import UIScene from './Scenes/UIScene';
 import Model from './Model';
 
 class Game extends Phaser.Game {
