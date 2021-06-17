@@ -32,6 +32,7 @@ export default class GameScene extends Phaser.Scene {
     mud = this.physics.add.staticGroup();
     mud.create(450, 568, 'mud').setScale(2).refreshBody();
 
+
     //Add player sprite.
     player = this.physics.add.sprite(100, 450, 'girl').setScale(2);
     
