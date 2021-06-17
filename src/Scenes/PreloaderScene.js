@@ -94,7 +94,6 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('bgMusic', ['assets/TownTheme.mp3']);
     this.load.spritesheet('girl', 'assets/girl.png', { frameWidth: 32, frameHeight: 48 });
     this.load.spritesheet("dragonblue", "assets/dragonblue.png", { frameWidth: 96, frameHeight: 64 });
-    this.load.image("dragonorrange", "assets/dragonorrange.png");
     this.load.image("battlebg", "assets/battlebg.png");
     
   }

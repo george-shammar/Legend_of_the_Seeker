@@ -15,10 +15,10 @@ export default class BattleScene extends Phaser.Scene {
        this.add.image(650, 300, 'battlebg');
 
        mud = this.physics.add.staticGroup();
-       mud.create(450, 568, 'mud').setScale(2).refreshBody();
+       mud.create(450, 568, 'mud').setScale(3).refreshBody();
         
        // player character - warrior
-       const warrior = new PlayerCharacter(this, 250, 492, 'girl', 0, 'Warrior', 100, 20);        
+       const warrior = new PlayerCharacter(this, 250, 475, 'girl', 0, 'Warrior', 100, 20);        
         this.add.existing(warrior);
         
        
@@ -26,10 +26,10 @@ export default class BattleScene extends Phaser.Scene {
        var mage = new PlayerCharacter(this, 250, 100, 'girl', 4, 'Mage', 80, 8);
        this.add.existing(mage);            
        
-       const dragonblue = new Enemy(this, 800, 492, 'dragonblue', 6, 'Dragon', 50, 3).setScale(2);
+       const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 3).setScale(2);
        this.add.existing(dragonblue);
        
-       const dragonOrange = new Enemy(this, 650, 200, 'dragonblue', 11,'Dragon2', 50, 3).setScale(2);
+       const dragonOrange = new Enemy(this, 700, 150, 'dragonblue', 11,'Dragon2', 50, 3).setScale(2);
        this.add.existing(dragonOrange);
        
        // array with heroes
