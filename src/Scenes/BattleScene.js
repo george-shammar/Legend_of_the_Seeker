@@ -1,7 +1,6 @@
 import 'phaser';
 
-
-let scoreBattle = 0;
+let score = 0;
 
 export default class BattleScene extends Phaser.Scene {
     constructor () {
@@ -44,9 +43,9 @@ export default class BattleScene extends Phaser.Scene {
        this.scene.launch('UIScene');
 
        this.index = -1;
+       
+       this.scoreTextBattle = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
 
-       this.scoreTextBattle = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-   
     }
     nextTurn() {
         this.index++;
@@ -58,11 +57,15 @@ export default class BattleScene extends Phaser.Scene {
             // if its player hero
             if(this.units[this.index] instanceof PlayerCharacter) {                
                 this.events.emit('PlayerSelect', this.index);
+                score += 100;
+                this.scoreTextBattle.setText('Score: ' + score);
             } else { // else if its enemy unit
                 // pick random hero
                 var r = Math.floor(Math.random() * this.heroes.length);
                 // call the enemy's attack function 
-                this.units[this.index].attack(this.heroes[r]);  
+                this.units[this.index].attack(this.heroes[r]);
+                score -= 50;
+                this.scoreTextBattle.setText('Score: ' + score);
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
             }
@@ -78,9 +81,9 @@ export default class BattleScene extends Phaser.Scene {
 
 const Unit = new Phaser.Class({
     Extends: Phaser.GameObjects.Sprite,
- 
+    
     initialize:
- 
+    
     function Unit(scene, x, y, texture, frame, type, hp, damage) {
         Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame)
         this.type = type;
@@ -121,3 +124,4 @@ const PlayerCharacter = new Phaser.Class({
         this.setScale(2);
     }
 });
+
