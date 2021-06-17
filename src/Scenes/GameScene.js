@@ -8,7 +8,7 @@ let bombs;
 let gameOver = false;
 let tomatoes;
 
-export default class GameScene extends Phaser.Scene {
+export class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
   }
@@ -184,5 +184,6 @@ export default class GameScene extends Phaser.Scene {
         this.add.image(650, 300, 'gameOver');
       }
     }
-
 };
+
+export {score};

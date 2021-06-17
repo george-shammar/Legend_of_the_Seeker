@@ -1,6 +1,7 @@
 import 'phaser';
+import {score} from './GameScene';
 
-let score = 0;
+let scoreBattle = 0;
 
 export default class BattleScene extends Phaser.Scene {
     constructor () {
@@ -44,7 +45,7 @@ export default class BattleScene extends Phaser.Scene {
 
        this.index = -1;
        
-       this.scoreTextBattle = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
+       this.scoreTextBattle = this.add.text(16, 16, `Score: ${score}`, { fontSize: '32px', fill: '#000' });
 
     }
     nextTurn() {
@@ -57,15 +58,15 @@ export default class BattleScene extends Phaser.Scene {
             // if its player hero
             if(this.units[this.index] instanceof PlayerCharacter) {                
                 this.events.emit('PlayerSelect', this.index);
-                score += 100;
-                this.scoreTextBattle.setText('Score: ' + score);
+                scoreBattle += 100;
+                this.scoreTextBattle.setText(`Score: ${score + scoreBattle}`);
             } else { // else if its enemy unit
                 // pick random hero
                 var r = Math.floor(Math.random() * this.heroes.length);
                 // call the enemy's attack function 
                 this.units[this.index].attack(this.heroes[r]);
-                score -= 50;
-                this.scoreTextBattle.setText('Score: ' + score);
+                scoreBattle -= 50;
+                this.scoreTextBattle.setText(`Score: ${score + scoreBattle}`);
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
             }
