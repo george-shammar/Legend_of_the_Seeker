@@ -2,6 +2,7 @@ import 'phaser';
 import {score} from './GameScene';
 
 let scoreBattle = 0;
+let gameOver = false;
 
 export default class BattleScene extends Phaser.Scene {
     constructor () {
@@ -54,14 +55,16 @@ export default class BattleScene extends Phaser.Scene {
             if(this.units[this.index] instanceof PlayerCharacter) {                
                 this.events.emit('PlayerSelect', this.index);
                 scoreBattle += 100;
-                this.scoreTextBattle.setText(`Score: ${score + scoreBattle}`);
+                let totalScore = `${score + scoreBattle}`;
+                this.scoreTextBattle.setText(`Score: ${totalScore}`);
             } else { // else if its enemy unit
                 // pick random hero
                 var r = Math.floor(Math.random() * this.heroes.length);
                 // call the enemy's attack function 
                 this.units[this.index].attack(this.heroes[r]);
                 scoreBattle -= 300;
-                this.scoreTextBattle.setText(`Score: ${score + scoreBattle}`);
+                let totalScore = `${score + scoreBattle}`;
+                this.scoreTextBattle.setText(`Score: ${totalScore}`);
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
             }
@@ -72,6 +75,12 @@ export default class BattleScene extends Phaser.Scene {
             this.units[this.index].attack(this.enemies[target]);              
         }
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
+    }
+
+    gameOver(){
+        if(gameOver === true) {
+          this.add.image(650, 300, 'gameOver');
+        }
     }
 }
 
@@ -120,4 +129,3 @@ const PlayerCharacter = new Phaser.Class({
         this.setScale(2);
     }
 });
-

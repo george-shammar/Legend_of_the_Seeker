@@ -178,12 +178,6 @@ export class GameScene extends Phaser.Scene {
       // this.gameSwitch();
       this.scene.switch('BattleScene');
     }
-
-    gameSwitch() {
-      if(gameOver === true) {
-        this.add.image(650, 300, 'gameOver');
-      }
-    }
 };
 
 export {score};
