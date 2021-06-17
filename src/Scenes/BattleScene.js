@@ -83,11 +83,11 @@ const Unit = new Phaser.Class({
         this.maxHp = this.hp = hp;
         this.damage = damage; // default damage                
     },
-    attack: function(target) {
+    attack(target) {
         target.takeDamage(this.damage);
-        this.scene.events.emit("Message", this.type + " attacks " + target.type + " for " + this.damage + " damage");  
+        this.scene.events.emit("Message", this.type + " attacks " + target.type + " for " + this.damage + " points");  
     },
-    takeDamage: function(damage) {
+    takeDamage(damage) {
         this.hp -= damage;  
         if(this.hp <= 0) {
             this.hp = 0;
