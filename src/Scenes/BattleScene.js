@@ -65,6 +65,9 @@ export default class BattleScene extends Phaser.Scene {
                 scoreBattle -= 300;
                 let totalScore = `${score + scoreBattle}`;
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
+                if(totalScore <= 0){
+                    this.gameOver();
+                }
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
             }
@@ -78,9 +81,7 @@ export default class BattleScene extends Phaser.Scene {
     }
 
     gameOver(){
-        if(gameOver === true) {
-          this.add.image(650, 300, 'gameOver');
-        }
+        this.add.image(650, 300, 'gameOver');
     }
 }
 
