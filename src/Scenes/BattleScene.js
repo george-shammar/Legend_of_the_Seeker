@@ -13,6 +13,9 @@ export default class BattleScene extends Phaser.Scene {
 
        // change the background to battlebg
        this.add.image(650, 300, 'battlebg');
+
+       mud = this.physics.add.staticGroup();
+       mud.create(450, 568, 'mud').setScale(2).refreshBody();
         
        // player character - warrior
        var warrior = new PlayerCharacter(this, 250, 50, 'girl', 1, 'Warrior', 100, 20);        
