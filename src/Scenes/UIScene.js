@@ -67,7 +67,7 @@ export default class UIScene extends Phaser.Scene {
         this.enemiesMenu.select(0);
     }
     onPlayerSelect(id) {
-        this.heroesMenu.select(id);
+        this.heroesMenu.select(0);
         this.actionsMenu.select(0);
         this.currentMenu = this.actionsMenu;
     }
@@ -233,9 +233,9 @@ const Message = new Phaser.Class({
         this.add(graphics);
         graphics.lineStyle(1, 0xffffff, 0.8);
         graphics.fillStyle(0x031f4c, 0.3);        
-        graphics.strokeRect(-90, -15, 180, 30);
-        graphics.fillRect(-90, -15, 180, 30);
-        this.text = new Phaser.GameObjects.Text(scene, 0, 0, "", { color: '#ffffff', align: 'center', fontSize: 13, wordWrap: { width: 160, useAdvancedWrap: true }});
+        graphics.strokeRect(200, 15, 250, 80); // -90, -15, 180, 30
+        graphics.fillRect(200, 15, 250, 80); // 180, 30
+        this.text = new Phaser.GameObjects.Text(scene, 310, 45, "", { color: '#ffffff', align: 'center', fontSize: 16, wordWrap: { width: 160, useAdvancedWrap: true }});
         this.add(this.text);
         this.text.setOrigin(0.5);        
         events.on("Message", this.showMessage, this);
