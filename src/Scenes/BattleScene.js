@@ -23,8 +23,8 @@ export default class BattleScene extends Phaser.Scene {
         
        
        // player character - mage
-       var mage = new PlayerCharacter(this, 250, 100, 'girl', 4, 'Mage', 80, 8);
-       this.add.existing(mage);            
+    //    var mage = new PlayerCharacter(this, 250, 100, 'girl', 4, 'Mage', 80, 8);
+    //    this.add.existing(mage);            
        
        const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 500).setScale(2);
        this.add.existing(dragonblue);
@@ -33,7 +33,7 @@ export default class BattleScene extends Phaser.Scene {
        this.add.existing(dragonOrange);
        
        // array with heroes
-       this.heroes = [ warrior, mage ];
+       this.heroes = [ warrior ]; //****** */
        // array with enemies
        this.enemies = [ dragonblue, dragonOrange ];
        // array with both parties, who will attack
@@ -57,6 +57,7 @@ export default class BattleScene extends Phaser.Scene {
             // if its player hero
             if(this.units[this.index] instanceof PlayerCharacter) {                
                 this.events.emit('PlayerSelect', this.index);
+                //increment score
                 score += 100;
                 this.scoreTextBattle.setText('Score: ' + score);
             } else { // else if its enemy unit
