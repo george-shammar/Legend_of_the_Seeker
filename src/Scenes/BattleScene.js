@@ -9,7 +9,9 @@ export default class BattleScene extends Phaser.Scene {
 
     create()
     { 
-       // change the background to green
+        let mud;
+
+       // change the background to battlebg
        this.add.image(650, 300, 'battlebg');
         
        // player character - warrior

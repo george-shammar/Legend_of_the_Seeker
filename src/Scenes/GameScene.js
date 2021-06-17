@@ -16,13 +16,10 @@ export default class GameScene extends Phaser.Scene {
   create() {
     let mud;
     let groundmiddle;
-   
-    
 
     //Add background world.
       this.add.image(650, 300, 'world');
     
- 
     //Add platform
     groundmiddle = this.physics.add.staticGroup();
     groundmiddle.create(310, 188, 'groundmiddle');
@@ -32,11 +29,8 @@ export default class GameScene extends Phaser.Scene {
     groundmiddle.create(1200, 188, 'groundmiddle');
     groundmiddle.create(1122, 187, 'groundmiddle');
 
-
     mud = this.physics.add.staticGroup();
     mud.create(450, 568, 'mud').setScale(2).refreshBody();
-
-   
 
     //Add player sprite.
     player = this.physics.add.sprite(100, 450, 'girl').setScale(2);
