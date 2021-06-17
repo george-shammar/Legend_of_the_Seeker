@@ -1,6 +1,7 @@
 import 'phaser';
 
 
+let scoreBattle = 0;
 
 export default class BattleScene extends Phaser.Scene {
     constructor () {
@@ -43,6 +44,9 @@ export default class BattleScene extends Phaser.Scene {
        this.scene.launch('UIScene');
 
        this.index = -1;
+
+       this.scoreTextBattle = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+   
     }
     nextTurn() {
         this.index++;

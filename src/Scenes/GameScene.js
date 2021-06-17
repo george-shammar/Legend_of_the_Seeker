@@ -153,9 +153,8 @@ export default class GameScene extends Phaser.Scene {
         this.scoreText.setText('Score: ' + score);
         
         if (tomatoes.countActive(true) < 7)
-        
           {
-            //  A new batch of stars to collect
+            //  A new batch of tomotoes to collect
             tomatoes.children.iterate(function (child) {
             child.enableBody(true, child.x, 0, true, true);
             });
