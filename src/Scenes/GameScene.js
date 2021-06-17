@@ -91,36 +91,7 @@ export class GameScene extends Phaser.Scene {
     this.physics.add.collider(bombs, groundmiddle);
     this.physics.add.collider(player, bombs, this.hitBomb, null, this);
 
-    
-
-
-    // where the enemies will be
-    // this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
-    // for(var i = 0; i < 30; i++) {
-    //     const x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-    //     const y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
-    //     // parameters are x, y, width, height
-    //     this.spawns.create(x, y, 20, 20);            
-    // }
-
-    // this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
   }
-
-  // onMeetEnemy (player, zone) {        
-  //   // we move the zone to some other location
-  //   zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-  //   zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
-   
-  //   //shake the world
-  //   this.cameras.main.shake(300);
-   
-  //   this.input.stopPropagation();
-  //   // start battle 
-  //   this.scene.switch('BattleScene');
-  // }
-
-
-
 
   update ()
     {
@@ -172,17 +143,8 @@ export class GameScene extends Phaser.Scene {
     hitBomb(player, bomb)
     {
       this.physics.pause();
-      player.setTint(0xff0000);
       player.anims.play('turn');
-      // gameOver = true;
-      // this.gameSwitch();
       this.scene.switch('BattleScene');
-    }
-
-    gameSwitch() {
-      if(gameOver === true) {
-        this.add.image(650, 300, 'gameOver');
-      }
     }
 };
 
