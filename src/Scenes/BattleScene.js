@@ -60,7 +60,7 @@ export default class BattleScene extends Phaser.Scene {
                 var r = Math.floor(Math.random() * this.heroes.length);
                 // call the enemy's attack function 
                 this.units[this.index].attack(this.heroes[r]);
-                scoreBattle -= 50;
+                scoreBattle -= 300;
                 this.scoreTextBattle.setText(`Score: ${score + scoreBattle}`);
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
