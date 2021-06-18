@@ -82,6 +82,7 @@ export default class BattleScene extends Phaser.Scene {
 
     gameOver(){
         this.add.image(650, 300, 'gameOver');
+        this.scene.start('Leaderboard');
     }
 }
 
