@@ -8,6 +8,6 @@ export default class LeaderboardScene extends Phaser.Scene {
 
 
     create() {
-        
+      this.add.image(650, 300, 'world');
     }
 }  
