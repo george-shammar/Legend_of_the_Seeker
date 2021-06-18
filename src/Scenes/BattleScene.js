@@ -67,6 +67,7 @@ export default class BattleScene extends Phaser.Scene {
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
                 if(totalScore <= 0){
                     this.gameOver();
+                    this.scene.start('Leaderboard');
                 }
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
@@ -82,7 +83,6 @@ export default class BattleScene extends Phaser.Scene {
 
     gameOver(){
         this.add.image(650, 300, 'gameOver');
-        this.scene.start('Leaderboard');
     }
 }
 
