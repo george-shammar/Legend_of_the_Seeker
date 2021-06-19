@@ -30,9 +30,10 @@ export default class GameOverScene extends Phaser.Scene {
       this.userForm.remove();
       }
       recordScore(playerName, score);
-      allScores().then((result) => {
-        that.scene.start('Title', result);
-      });
+      that.scene.start('Title');
+      // allScores().then((result) => {
+      //   that.scene.start('Title', result);
+      // });
     });
 
 
