@@ -18,6 +18,11 @@ export default class LeaderboardScene extends Phaser.Scene {
     // Create leaderboard table
     const tableBoard = document.createElement('table');
     tableBoard.setAttribute('class', 'table');
+
+    const tableHead = document.createElement('thead');
+    tableBoard.appendChild(tableHead);
+
+
     
   };
 
