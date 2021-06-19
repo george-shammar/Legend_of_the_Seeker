@@ -25,6 +25,17 @@ export default class LeaderboardScene extends Phaser.Scene {
     const tr = document.createElement('tr');
     tHead.appendChild(tr);
 
+    const tPlayer = document.createElement('th');
+    tPlayer.setAttribute('scope', 'col');
+    tPlayer.innerHTML = 'Player';
+    tr.appendChild(tPlayer);
+
+    const tScore = document.createElement('th');
+    tScore.setAttribute('scope', 'col');
+    tScore.innerHTML = 'Score';
+    tr.appendChild(tScore);
+
+
 
 
     
