@@ -2,7 +2,7 @@ import 'phaser';
 import {allScores, recordScore} from '../apiScore';
 import form from '../scoreForm';
 
-export class GameScene extends Phaser.Scene {
+export class GameOverScene extends Phaser.Scene {
     constructor () {
       super('GameOver');
     }
