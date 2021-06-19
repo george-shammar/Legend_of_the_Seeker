@@ -82,6 +82,12 @@ export default class BattleScene extends Phaser.Scene {
 
     gameOver(){
         this.add.image(650, 300, 'gameOver');
+        this.menuButton = this.add.sprite(650, 500, 'blueButton1').setInteractive();
+        this.menuText = this.add.text(0, 0, 'Replay', { fontSize: '32px', fill: '#fff' });
+        Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
+        this.menuButton.on('pointerdown', () => {
+        this.scene.start('Title');
+      });
     }
 }
 
