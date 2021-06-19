@@ -8,15 +8,12 @@ export default class LeaderboardScene extends Phaser.Scene {
 
 
     create() {
-      this.add.image(650, 300, 'world');
-
-    //   this.title = this.add.text(this.game.config.width * 0.5, 100, 'TOP PLAYERS:', {
-    //     fontFamily: 'monospace',
-    //     fontSize: 48,
-    //     fontStyle: 'bold',
-    //     color: 'white',
-    //     align: 'center',
-    //   });
+   
+    this.title = this.add.text(350, 50, 'HIGHEST SCORERS:', {
+      fontSize: 30,
+      fontStyle: 'bold',
+      align: 'center',
+    });
     //   this.title.setOrigin(0.5);
   
     //   this.getScores();
