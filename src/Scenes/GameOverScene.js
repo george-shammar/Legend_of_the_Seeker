@@ -39,6 +39,6 @@ export default class GameOverScene extends Phaser.Scene {
 
     Phaser.Display.Align.In.Center(this.saveText, this.saveButton);
     this.menuButton = new Button(this, 650, 500, 'blueButton1', 'blueButton2', 'Replay', 'Title');
-    this.leaderBoard = new Button(this, 650, 300, 'blueButton1', 'blueButton2', 'Highest Scores', 'Leaderboard')
+    this.leaderBoard = new Button(this, 1100, 500, 'blueButton1', 'blueButton2', 'Highest Scores', 'Leaderboard')
   }
 }
