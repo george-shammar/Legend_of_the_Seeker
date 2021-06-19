@@ -24,9 +24,4 @@ const form = () => {
 
 }
 
-<form>
-    <label for="fname">Enter Your Username Here To Save Your Score</label><br>
-
-    <input type="text" id="fname" name="fname" placeholder="Enter your username">
-    <input type="submit" value="Save Score">
-  </form> 
+export default form;
