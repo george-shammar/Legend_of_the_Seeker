@@ -1,4 +1,5 @@
 import 'phaser';
+import {score} from './GameScene';
 import {allScores, recordScore} from '../apiScore';
 
 export default class LeaderboardScene extends Phaser.Scene {
@@ -16,7 +17,7 @@ export default class LeaderboardScene extends Phaser.Scene {
     });
 
     // Create leaderboard table
-    const highScore = () => {
+    const highScore = (score) => {
     const tableBoard = document.createElement('table');
     tableBoard.setAttribute('class', 'table');
 
@@ -39,7 +40,9 @@ export default class LeaderboardScene extends Phaser.Scene {
     return tableBoard;
     }
 
-    document.body.appendChild(highScore());
+    // document.body.appendChild(highScore());
+
+  
 
   };
 
