@@ -66,7 +66,7 @@ export default class BattleScene extends Phaser.Scene {
                 let totalScore = `${score + scoreBattle}`;
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
                 if(totalScore <= 0){
-                    this.gameOver();
+                   
                 }
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
@@ -80,15 +80,15 @@ export default class BattleScene extends Phaser.Scene {
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
     }
 
-    gameOver(){
-        this.add.image(650, 300, 'gameOver');
-        this.menuButton = this.add.sprite(650, 500, 'blueButton1').setInteractive();
-        this.menuText = this.add.text(0, 0, 'Replay', { fontSize: '32px', fill: '#fff' });
-        Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
-        this.menuButton.on('pointerdown', () => {
-        this.scene.start('Title');
-      });
-    }
+    // gameOver(){
+    //     this.add.image(650, 300, 'gameOver');
+    //     this.menuButton = this.add.sprite(650, 500, 'blueButton1').setInteractive();
+    //     this.menuText = this.add.text(0, 0, 'Replay', { fontSize: '32px', fill: '#fff' });
+    //     Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
+    //     this.menuButton.on('pointerdown', () => {
+    //     this.scene.start('Title');
+    //   });
+    // }
 }
 
 const Unit = new Phaser.Class({
