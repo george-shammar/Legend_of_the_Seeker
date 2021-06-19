@@ -9,35 +9,34 @@ export default class GameOverScene extends Phaser.Scene {
       super('GameOver');
     }
 
-
-  // init(data) {
-  //   this.score = data.score;
-  // }
-
   create() {
 
     this.userScore = this.add.text(550, 150, `Total Score: ${score}`);
   
+    document.body.appendChild(form());
 
 
-    // document.body.appendChild(form);
-    
-    // const that = this;
-    // this.userForm = document.getElementById('form');
-    // // this.saveButton.on('pointerdown', () => {
-    //   const username = document.getElementById('score').value;
-    //   if (this.userForm !== null) {
-    //     this.userForm.remove();
-    //   }
-    //   recordScore(username, that.score);
-    //   allScores().then((result) => {
-    //     // that.scene.start('Title', result);
-    //   });
-    // // });
+    this.saveButton = this.add.sprite(200, 500, 'blueButton1').setInteractive();
+    this.saveText = this.add.text(100, 500, 'Save Score', {
+      fontSize: '32px',
+      fill: '#fff',
+    });
+
+    const that = this;
+      this.userForm = document.getElementById('form');
+      this.saveButton.on('pointerdown', () => {
+      const username = document.getElementById('score').value;
+      if (this.userForm !== null) {
+      this.userForm.remove();
+      }
+      recordScore(playerName, score);
+      allScores().then((result) => {
+        that.scene.start('Title', result);
+      });
+    });
 
 
-    // Phaser.Display.Align.In.Center(this.saveText, this.saveButton);
-
-    // this.menuButton = new Button(this, 650, 500, 'blueButton1', 'blueButton2', 'Main', 'Title');
+    Phaser.Display.Align.In.Center(this.saveText, this.saveButton);
+    this.menuButton = new Button(this, 650, 500, 'blueButton1', 'blueButton2', 'Main', 'Title');
   }
 }
