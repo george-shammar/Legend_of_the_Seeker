@@ -10,15 +10,18 @@ export default class GameOverScene extends Phaser.Scene {
     }
 
 
-  init(data) {
-    this.score = data.score;
-  }
+  // init(data) {
+  //   this.score = data.score;
+  // }
 
   create() {
-    this.userScore = this.add.text(650, 300, `Total Score: ${this.score}`);
 
-    document.body.appendChild(form());
+    this.userScore = this.add.text(550, 150, `Total Score: ${score}`);
+  
 
+
+    // document.body.appendChild(form);
+    
     // const that = this;
     // this.userForm = document.getElementById('form');
     // // this.saveButton.on('pointerdown', () => {
@@ -28,13 +31,13 @@ export default class GameOverScene extends Phaser.Scene {
     //   }
     //   recordScore(username, that.score);
     //   allScores().then((result) => {
-    //     that.scene.start('Title', result);
+    //     // that.scene.start('Title', result);
     //   });
     // // });
 
 
     // Phaser.Display.Align.In.Center(this.saveText, this.saveButton);
 
-    this.menuButton = new Button(this, 650, 500, 'blueButton1', 'blueButton2', 'Main', 'Title');
+    // this.menuButton = new Button(this, 650, 500, 'blueButton1', 'blueButton2', 'Main', 'Title');
   }
 }
