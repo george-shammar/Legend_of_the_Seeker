@@ -9,13 +9,14 @@ export default class LeaderboardScene extends Phaser.Scene {
 
   create() {
    
-    this.title = this.add.text(350, 50, 'HIGHEST SCORERS:', {
+    this.leadersTitle = this.add.text(350, 50, 'HIGHEST SCORERS:', {
       fontSize: 30,
       fontStyle: 'bold',
       align: 'center',
     });
 
     // Create leaderboard table
+    const highScore = () => {
     const tableBoard = document.createElement('table');
     tableBoard.setAttribute('class', 'table');
 
@@ -34,11 +35,12 @@ export default class LeaderboardScene extends Phaser.Scene {
     tScore.setAttribute('scope', 'col');
     tScore.innerHTML = 'Score';
     tr.appendChild(tScore);
+      
+    return tableBoard;
+    }
 
+    document.body.appendChild(highScore());
 
-
-
-    
   };
 
 }  
