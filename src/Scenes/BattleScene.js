@@ -4,7 +4,7 @@ import {score} from './GameScene';
 let scoreBattle = 0;
 let gameOver = false;
 let monster;
-
+let bombs;
 
 export default class BattleScene extends Phaser.Scene {
     constructor () {
@@ -24,17 +24,23 @@ export default class BattleScene extends Phaser.Scene {
        
         
        //create monster
-       monster = this.physics.add.sprite(100, 450, 'dragonblue').setScale(2);
-       monster.setBounce(0.9);
+       monster = this.physics.add.sprite(250, 450, 'dragonblue').setScale(2);
+       monster.setBounce(1);
        monster.setCollideWorldBounds(true);
        this.physics.add.collider(monster, mud);
+       monster.allowGravity = false;
+       monster.setVelocityY(Phaser.Math.Between(50, 200), 5);
+      
+       
+    //    bombs = this.physics.add.group();
+    //    this.physics.add.collider(bombs, mud);
 
        // player character - warrior
-       const warrior = new PlayerCharacter(this, 250, 475, 'girl', 0, 'Warrior', 100, 100);      
+       const warrior = new PlayerCharacter(this, 850, 467, 'girl', 6, 'Warrior', 100, 100);      
         this.add.existing(warrior);
 
        const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 300);
-    //    this.add.existing(dragonblue);
+        this.add.existing(dragonblue);
        
        
        const dragonOrange = new Enemy(this, 700, 150, 'dragonblue', 11,'Dragon2', 50, 300);
