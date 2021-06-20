@@ -20,18 +20,18 @@ export default class BattleScene extends Phaser.Scene {
 
        mud = this.physics.add.staticGroup();
        mud.create(450, 568, 'mud').setScale(3).refreshBody();
-       mud.create(300, 270,  'groundmiddle');
+       mud.create(120, 400,  'groundmiddle');
        
         
        //create monster
-       monster1 = this.physics.add.sprite(200, 450, 'dragonblue').setScale(2);
+       monster1 = this.physics.add.sprite(350, 450, 'dragonblue').setScale(2);
        monster1.setBounce(1);
        monster1.setCollideWorldBounds(true);
        this.physics.add.collider(monster1, mud);
        monster1.allowGravity = false;
        monster1.setVelocityY(Phaser.Math.Between(50, 200), 5);
 
-       monster2 = this.physics.add.sprite(350, 100, 'dragonblue').setScale(2);
+       monster2 = this.physics.add.sprite(150, 250, 'dragonblue').setScale(2);
        monster2.setBounce(1);
        monster2.setCollideWorldBounds(true);
        this.physics.add.collider(monster2, mud);
@@ -114,7 +114,7 @@ export default class BattleScene extends Phaser.Scene {
     receivePlayerSelection(action, target) {
         if(action == 'attack') {            
             this.units[this.index].attack(this.enemies[target]);
-            
+
             //warrior bullet
             bullets2 = this.physics.add.group({
                 key: 'bullet2',
