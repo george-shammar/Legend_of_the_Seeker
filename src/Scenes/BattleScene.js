@@ -46,18 +46,7 @@ export default class BattleScene extends Phaser.Scene {
        player.allowGravity = false;
        player.setVelocityY(Phaser.Math.Between(50, 200), 5);
        
-        //Add bullets
-        bullets = this.physics.add.group({
-            key: 'bullet',
-            repeat: 2,
-            setXY: { x: 305, y: 450, stepX: 70 }
-        });
-        // bullets.setCollideWorldBounds(true);
-        // this.physics.add.collider(bullets, player);
-        bullets.allowGravity = false;
-        bullets.setVelocity(Phaser.Math.Between(800, 1500), 20);
-
-
+        
 
        // player character - warrior
        const warrior = new PlayerCharacter(this, 1100, 469, 'girl', 5, 'Warrior', 100, 100);      
@@ -103,6 +92,16 @@ export default class BattleScene extends Phaser.Scene {
                 var r = Math.floor(Math.random() * this.heroes.length);
                 // call the enemy's attack function 
                 this.units[this.index].attack(this.heroes[r]);
+                //Enemy fire
+                bullets = this.physics.add.group({
+                    key: 'bullet',
+                    repeat: 2,
+                    setXY: { x: 305, y: 450, stepX: 70 }
+                });
+                bullets.allowGravity = false;
+                bullets.setVelocity(Phaser.Math.Between(800, 1500), 20);
+
+
                 scoreBattle -= 300;
                 let totalScore = `${score + scoreBattle}`;
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
