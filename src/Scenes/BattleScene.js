@@ -20,11 +20,11 @@ export default class BattleScene extends Phaser.Scene {
 
        mud = this.physics.add.staticGroup();
        mud.create(450, 568, 'mud').setScale(3).refreshBody();
-       mud.create(730, 270,  'groundmiddle');
+       mud.create(300, 270,  'groundmiddle');
        
         
        //create monster
-       monster = this.physics.add.sprite(250, 450, 'dragonblue').setScale(2);
+       monster = this.physics.add.sprite(200, 450, 'dragonblue').setScale(2);
        monster.setBounce(1);
        monster.setCollideWorldBounds(true);
        this.physics.add.collider(monster, mud);
@@ -36,11 +36,11 @@ export default class BattleScene extends Phaser.Scene {
     //    this.physics.add.collider(bombs, mud);
 
        // player character - warrior
-       const warrior = new PlayerCharacter(this, 850, 467, 'girl', 6, 'Warrior', 100, 100);      
+       const warrior = new PlayerCharacter(this, 850, 467, 'girl', 5, 'Warrior', 100, 100);      
         this.add.existing(warrior);
 
        const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 300);
-        this.add.existing(dragonblue);
+        // this.add.existing(dragonblue);
        
        
        const dragonOrange = new Enemy(this, 700, 150, 'dragonblue', 11,'Dragon2', 50, 300);
