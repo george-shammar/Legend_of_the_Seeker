@@ -3,6 +3,7 @@ import {score} from './GameScene';
 
 let scoreBattle = 0;
 let gameOver = false;
+let monster;
 
 
 export default class BattleScene extends Phaser.Scene {
@@ -22,9 +23,9 @@ export default class BattleScene extends Phaser.Scene {
        mud.create(730, 270,  'groundmiddle');
         
        // player character - warrior
-       const warrior = new PlayerCharacter(this, 250, 475, 'girl', 0, 'Warrior', 100, 100);        
-        this.add.existing(warrior);        
-       
+       const warrior = new PlayerCharacter(this, 250, 475, 'girl', 0, 'Warrior', 100, 100);      
+        this.add.existing(warrior);
+
        const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 300);
        this.add.existing(dragonblue);
        
