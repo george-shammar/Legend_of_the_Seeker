@@ -56,7 +56,6 @@ This command installs all the game dependencies. Once you complete all installat
 ## Game Overview
 
 - There are two game scenes apart from the other scenes that enhances usability like Options Scene, Credit Scenes e.t.c
-
 - The two scenes are the World Scene (Or Game Scene) and the Battle Scene.
 - The player moves from the World Scene to the Battle Scene and then the game is over either with a victory or a defeat.
 - The game can be replayed as many times as possible.
@@ -67,10 +66,10 @@ This command installs all the game dependencies. Once you complete all installat
 
 ### World Scene
 - Your primary objective is to win with as much points as possible so as to feature on the Leader Board.
-- At the World Scene (The first scene), you are expectec to gather as much fruits (points) as possible. Each fruit gathered has 100 points.
+- At the World Scene (The first scene), you are expected to gather as much fruits (points) as possible. Each fruit gathered is 100 points.
 - While gathering the fruits (points), you must not get touched by the bouncing spike balls, else you enter the Battle Scene to fight the Dragons immediately.
-- At the World Scene, the difficulty level increases with the number of fruits you have gathered as the number of spike balls you have to avoid is incremented with increasing points.
-- You'll eventually get touched by the spike balls and then you'll move to the Battle Scene.
+- At the World Scene, the difficulty level increases with the number of fruits you have gathered. The number of spike balls you have to avoid is incremented with increasing points you have gathered.
+- Eventually, you'll get touched by the spike balls and then you'll move to the Battle Scene - TO FIGHT.
 
 ### Battle Scene
 - In this scene, you have to defeat two dragons while making sure you don't loose much points.
