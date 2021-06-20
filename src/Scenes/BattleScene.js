@@ -96,8 +96,6 @@ export default class BattleScene extends Phaser.Scene {
                 });
                 bullets.allowGravity = false;
                 bullets.setVelocity(Phaser.Math.Between(800, 1500), 20);
-
-
                 scoreBattle -= 300;
                 let totalScore = `${score + scoreBattle}`;
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
