@@ -69,10 +69,12 @@ This command installs all the game dependencies. Once you complete all installat
 ## Game Controls
 
 ### World Scene
-- Jump: Up Arrow Key.
-- Forward: Right Arrow Key.
-- Backward: Left Arrow Key.
+- Jump: Up Keyboard Key.
+- Forward: Right Keybaord Key.
+- Backward: Left Keyboard Key.
 
 ### Battle Scene
-
+- Select Dragon to Attack: Left Keyboard Key.
+- To change selection up or down: Up and Down Keyboard Key.
+- To confirm selected dragon to attack and initiate attack: Space bar.
 
