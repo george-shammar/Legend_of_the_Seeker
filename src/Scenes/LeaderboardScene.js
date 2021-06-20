@@ -1,73 +1,49 @@
 import 'phaser';
-import {score} from './GameScene';
-import {allScores, recordScore} from '../apiScore';
+import { allScores } from '../apiScore';
 
-export default class LeaderboardScene extends Phaser.Scene {
-    constructor () {
-      super('Leaderboard');
-    }
 
+export default class LeaderBoardScene extends Phaser.Scene {
+  constructor() {
+    super('Leaderboard');
+  }
 
   create() {
-   
-    this.leadersTitle = this.add.text(350, 50, 'HIGHEST SCORERS:', {
-      fontSize: 30,
+    this.title = this.add.text(this.game.config.width * 0.5, 100, 'TOP PLAYERS:', {
+      fontFamily: 'monospace',
+      fontSize: 32,
       fontStyle: 'bold',
+      color: 'white',
       align: 'center',
     });
+    this.title.setOrigin(0.5);
 
-    // Create leaderboard table
-    const highScore = (score) => {
-    const tableBoard = document.createElement('table');
-    tableBoard.setAttribute('class', 'table');
+    this.getScores();
 
-    const tHead = document.createElement('thead');
-    tableBoard.appendChild(tHead);
-
-    const tr = document.createElement('tr');
-    tHead.appendChild(tr);
-
-    const tPlayer = document.createElement('th');
-    tPlayer.setAttribute('scope', 'col');
-    tPlayer.innerHTML = 'Player';
-    tr.appendChild(tPlayer);
-
-    const tScore = document.createElement('th');
-    tScore.setAttribute('scope', 'col');
-    tScore.innerHTML = 'Score';
-    tr.appendChild(tScore);
-      
-    return tableBoard;
-    }
-
-    // document.body.appendChild(highScore());
+    this.menuButton = this.add.sprite(400, 500, 'blueButton1').setInteractive();
+    this.menuText = this.add.text(0, 0, 'Menu', { fontSize: '32px', fill: '#fff' });
+    Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
+    this.menuButton.on('pointerdown', () => {
+      this.scene.start('Title');
+    });
+  }
 
   
+  getScores = async () => {
+    const data = await allScores();
 
+    console.log(data);
+    // data.sort((a, b) => b.score - a.score)
+    //   .slice(0, 5)
+    //   .map((game, index) => {
+    //     const text = `${game.user} - Score: ${game.score}`;
+    //     this.add.text(800 / 2, (65 * (index + 1.1)) + 100, text, {
+    //       fontFamily: 'monospace',
+    //       fontSize: '28px',
+    //       color: 'white',
+    //       align: 'center',
+    //       lineHeight: '1',
+    //     }).setOrigin(0.5, 0.5);
+    //     return text;
+    //   });
   };
-
-}  
-
-
-//   this.title.setOrigin(0.5);
-  
-    //   this.getScores();
-  
-      
-    // }
-
-    // getScores = async () => {
-    //   const data = await allScores();
-    //   data.sort((a, b) => b.score - a.score)
-    //     .slice(0, 5)
-    //     .map((game, index) => {
-    //       const text = `${game.user} - Score: ${game.score}`;
-    //       this.add.text(800 / 2, (65 * (index + 1.1)) + 100, text, {
-    //         fontFamily: 'monospace',
-    //         fontSize: '28px',
-    //         color: 'white',
-    //         align: 'center',
-    //         lineHeight: '1',
-    //       }).setOrigin(0.5, 0.5);
-    //       return text;
-    //     });
+}
