@@ -66,4 +66,13 @@ This command installs all the game dependencies. Once you complete all installat
 ### Leader Board
 - You feature on the Leader Board if your total score is in the first 10 highest scores.
 
+## Game Controls
+
+### World Scene
+- Jump: Up Arrow Key.
+- Forward: Right Arrow Key.
+- Backward: Left Arrow Key.
+
+### Battle Scene
+
 
