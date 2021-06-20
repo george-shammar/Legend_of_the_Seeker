@@ -90,3 +90,19 @@ This command installs all the game dependencies. Once you complete all installat
 - Twitter: [@GeorgeShammar](https://twitter.com/GeorgeShammar)
 - LinkedIn: [George Gbenle](https://www.linkedin.com/in/georgegbenle/)
 
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
+
+## Acknowledgments
