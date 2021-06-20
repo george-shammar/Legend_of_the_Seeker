@@ -37,7 +37,7 @@ export default class BattleScene extends Phaser.Scene {
        this.units = this.heroes.concat(this.enemies);
        
        // Run UI Scene at the same time
-       this.scene.launch('UIScene');
+       this.scene.run('UIScene');
 
        this.index = -1;
        
@@ -66,7 +66,8 @@ export default class BattleScene extends Phaser.Scene {
                 let totalScore = `${score + scoreBattle}`;
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
                 if(totalScore <= 0){
-               
+                    this.scene.start('GameOver');
+                    this.scene.sleep('UIScene');
                 }
                 // add timer for the next turn, so will have smooth gameplay
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
