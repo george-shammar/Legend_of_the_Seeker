@@ -25,18 +25,18 @@ export default class BattleScene extends Phaser.Scene {
         
        //create monster
        monster1 = this.physics.add.sprite(200, 450, 'dragonblue').setScale(2);
-       monster.setBounce(1);
-       monster.setCollideWorldBounds(true);
-       this.physics.add.collider(monster, mud);
-       monster.allowGravity = false;
-       monster.setVelocityY(Phaser.Math.Between(50, 200), 5);
+       monster1.setBounce(1);
+       monster1.setCollideWorldBounds(true);
+       this.physics.add.collider(monster1, mud);
+       monster1.allowGravity = false;
+       monster1.setVelocityY(Phaser.Math.Between(50, 200), 5);
 
        monster2 = this.physics.add.sprite(200, 450, 'dragonblue').setScale(2);
-       monster.setBounce(1);
-       monster.setCollideWorldBounds(true);
-       this.physics.add.collider(monster, mud);
-       monster.allowGravity = false;
-       monster.setVelocityY(Phaser.Math.Between(50, 200), 5);
+       monster2.setBounce(1);
+       monster2.setCollideWorldBounds(true);
+       this.physics.add.collider(monster2, mud);
+       monster2.allowGravity = false;
+       monster2.setVelocityY(Phaser.Math.Between(50, 200), 5);
       
        
     //    bombs = this.physics.add.group();
