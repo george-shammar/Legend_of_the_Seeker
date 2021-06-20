@@ -39,12 +39,12 @@ export default class BattleScene extends Phaser.Scene {
        monster2.setVelocityY(Phaser.Math.Between(50, 200), 5);
 
        //create player
-       player = this.physics.add.sprite(1100, 469, 'girl').setScale(2);
+       player = this.physics.add.sprite(1000, 469, 'girl').setScale(2);
        player.setBounce(1);
-       monster2.setCollideWorldBounds(true);
+       player.setCollideWorldBounds(true);
        this.physics.add.collider(player, mud);
-       monster2.allowGravity = false;
-       monster2.setVelocityY(Phaser.Math.Between(50, 200), 5);
+       player.allowGravity = false;
+       player.setVelocityY(Phaser.Math.Between(50, 200), 5);
        
         //Add bullets
         bullets = this.physics.add.group({
@@ -52,6 +52,13 @@ export default class BattleScene extends Phaser.Scene {
             repeat: 0,
             setXY: { x: 305, y: 450, stepX: 70 }
         });
+        // bullets.setCollideWorldBounds(true);
+        // this.physics.add.collider(bullets, player);
+        bullets.allowGravity = false;
+        bullets.setVelocity(Phaser.Math.Between(800, 1500), 20);
+
+
+
        // player character - warrior
        const warrior = new PlayerCharacter(this, 1100, 469, 'girl', 5, 'Warrior', 100, 100);      
         // this.add.existing(warrior);
