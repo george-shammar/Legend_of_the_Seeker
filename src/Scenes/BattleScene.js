@@ -4,6 +4,7 @@ import {score} from './GameScene';
 let scoreBattle = 0;
 let gameOver = false;
 let monster1, monster2;
+let player;
 let bombs;
 
 export default class BattleScene extends Phaser.Scene {
@@ -31,27 +32,31 @@ export default class BattleScene extends Phaser.Scene {
        monster1.allowGravity = false;
        monster1.setVelocityY(Phaser.Math.Between(50, 200), 5);
 
-       monster2 = this.physics.add.sprite(200, 450, 'dragonblue').setScale(2);
+       monster2 = this.physics.add.sprite(350, 100, 'dragonblue').setScale(2);
        monster2.setBounce(1);
        monster2.setCollideWorldBounds(true);
        this.physics.add.collider(monster2, mud);
        monster2.allowGravity = false;
        monster2.setVelocityY(Phaser.Math.Between(50, 200), 5);
-      
-       
-    //    bombs = this.physics.add.group();
-    //    this.physics.add.collider(bombs, mud);
 
+       //create player
+       player = this.physics.add.sprite(1100, 469, 'girl').setScale(2);
+       player.setBounce(1);
+       monster2.setCollideWorldBounds(true);
+       this.physics.add.collider(player, mud);
+       monster2.allowGravity = false;
+       monster2.setVelocityY(Phaser.Math.Between(50, 200), 5);
+       
        // player character - warrior
-       const warrior = new PlayerCharacter(this, 850, 467, 'girl', 5, 'Warrior', 100, 100);      
-        this.add.existing(warrior);
+       const warrior = new PlayerCharacter(this, 1100, 469, 'girl', 5, 'Warrior', 100, 100);      
+        // this.add.existing(warrior);
 
        const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 300);
         // this.add.existing(dragonblue);
        
        
        const dragonOrange = new Enemy(this, 700, 150, 'dragonblue', 11,'Dragon2', 50, 300);
-       this.add.existing(dragonOrange);
+    //    this.add.existing(dragonOrange);
        
        // array with heroes
        this.heroes = [ warrior ];
