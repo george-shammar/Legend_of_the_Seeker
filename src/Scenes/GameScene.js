@@ -133,7 +133,7 @@ export class GameScene extends Phaser.Scene {
             const x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
     
             const bomb = bombs.create(x, 16, 'bomb');
-            bomb.setBounce(0.5);
+            bomb.setBounce(1);
             bomb.setCollideWorldBounds(true);
             bomb.setVelocity(Phaser.Math.Between(-100, 200), 20);
             bomb.allowGravity = false;

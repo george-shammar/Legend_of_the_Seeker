@@ -125,7 +125,16 @@ export default class BattleScene extends Phaser.Scene {
             let totalScore = `${score + scoreBattle}`;
             this.scoreTextBattle.setText(`Score: ${totalScore}`);             
         }
-        this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
+        this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this }); 
+        
+        //winner
+        // this.title = this.add.text(650, 100, 'YOU WON!!!!:', {
+        //     fontSize: 32,
+        //     fontStyle: 'bold',
+        //     color: 'white',
+        //     align: 'center',
+        //   });
+        // this.title.setOrigin(0.5);
     }
 }
 
