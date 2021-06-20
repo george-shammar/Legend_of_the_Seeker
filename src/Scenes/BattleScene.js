@@ -4,6 +4,7 @@ import {score} from './GameScene';
 let scoreBattle = 0;
 let gameOver = false;
 
+
 export default class BattleScene extends Phaser.Scene {
     constructor () {
       super('BattleScene');
@@ -22,12 +23,13 @@ export default class BattleScene extends Phaser.Scene {
         
        // player character - warrior
        const warrior = new PlayerCharacter(this, 250, 475, 'girl', 0, 'Warrior', 100, 100);        
-        this.add.existing(warrior);         
+        this.add.existing(warrior);        
        
-       const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 500).setScale(2);
+       const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 300);
        this.add.existing(dragonblue);
        
-       const dragonOrange = new Enemy(this, 700, 150, 'dragonblue', 11,'Dragon2', 50, 500).setScale(2);
+       
+       const dragonOrange = new Enemy(this, 700, 150, 'dragonblue', 11,'Dragon2', 50, 300);
        this.add.existing(dragonOrange);
        
        // array with heroes
@@ -114,6 +116,8 @@ const Enemy = new Phaser.Class({
     initialize:
     function Enemy(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
+
+        this.setScale(2);
     }
 });
 
