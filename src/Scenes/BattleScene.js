@@ -18,6 +18,7 @@ export default class BattleScene extends Phaser.Scene {
 
        mud = this.physics.add.staticGroup();
        mud.create(450, 568, 'mud').setScale(3).refreshBody();
+       mud.create(730, 270,  'groundmiddle');
         
        // player character - warrior
        const warrior = new PlayerCharacter(this, 250, 475, 'girl', 0, 'Warrior', 100, 100);        
@@ -66,7 +67,7 @@ export default class BattleScene extends Phaser.Scene {
                 let totalScore = `${score + scoreBattle}`;
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
                 if(totalScore <= 0){
-                    // this.scene.start('GameOver');
+                    this.scene.start('GameOver');
                     this.scene.sleep('BattleScene');
                     this.scene.sleep('UIScene');
                 }
