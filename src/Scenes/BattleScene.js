@@ -49,7 +49,7 @@ export default class BattleScene extends Phaser.Scene {
         //Add bullets
         bullets = this.physics.add.group({
             key: 'bullet',
-            repeat: 0,
+            repeat: 2,
             setXY: { x: 305, y: 450, stepX: 70 }
         });
         // bullets.setCollideWorldBounds(true);
