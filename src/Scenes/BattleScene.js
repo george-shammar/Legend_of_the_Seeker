@@ -4,7 +4,7 @@ import {score} from './GameScene';
 let scoreBattle = 0;
 let monster1, monster2;
 let player;
-let bullets;
+let bullets, bullets2;
 
 export default class BattleScene extends Phaser.Scene {
     constructor () {
@@ -45,7 +45,6 @@ export default class BattleScene extends Phaser.Scene {
        this.physics.add.collider(player, mud);
        player.allowGravity = false;
        player.setVelocityY(Phaser.Math.Between(50, 200), 5);
-       
         
 
        // player character - warrior
@@ -84,9 +83,6 @@ export default class BattleScene extends Phaser.Scene {
             // if its player hero
             if(this.units[this.index] instanceof PlayerCharacter) {                
                 this.events.emit('PlayerSelect', this.index);
-                scoreBattle += 100;
-                let totalScore = `${score + scoreBattle}`;
-                this.scoreTextBattle.setText(`Score: ${totalScore}`);
             } else { // else if its enemy unit
                 // pick random hero
                 var r = Math.floor(Math.random() * this.heroes.length);
@@ -117,7 +113,19 @@ export default class BattleScene extends Phaser.Scene {
     }
     receivePlayerSelection(action, target) {
         if(action == 'attack') {            
-            this.units[this.index].attack(this.enemies[target]);              
+            this.units[this.index].attack(this.enemies[target]);
+            
+            //warrior bullet
+            bullets2 = this.physics.add.group({
+                key: 'bullet2',
+                repeat: 2,
+                setXY: { x: 900, y: 450, stepX: 70 }
+            });
+            bullets2.allowGravity = false;
+            bullets2.setVelocity(Phaser.Math.Between(0, -1800), 20);
+            scoreBattle += 100;
+            let totalScore = `${score + scoreBattle}`;
+            this.scoreTextBattle.setText(`Score: ${totalScore}`);             
         }
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
     }
