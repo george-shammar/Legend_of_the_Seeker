@@ -8,8 +8,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
   }
 
   create() {
-    this.title = this.add.text(this.game.config.width * 0.5, 100, 'TOP PLAYERS:', {
-      fontFamily: 'monospace',
+    this.title = this.add.text(650, 100, 'HIGEST SCORES:', {
       fontSize: 32,
       fontStyle: 'bold',
       color: 'white',
@@ -19,7 +18,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
 
     this.getScores();
 
-    this.menuButton = this.add.sprite(400, 500, 'blueButton1').setInteractive();
+    this.menuButton = this.add.sprite(650, 500, 'blueButton1').setInteractive();
     this.menuText = this.add.text(0, 0, 'Menu', { fontSize: '32px', fill: '#fff' });
     Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
     this.menuButton.on('pointerdown', () => {

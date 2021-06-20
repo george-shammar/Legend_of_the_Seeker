@@ -3,6 +3,7 @@ import {allScores, recordScore} from '../apiScore';
 import {score} from './GameScene';
 import form from '../scoreForm';
 import Button from '../Objects/Button';
+import config from '../Config/config';
 
 export default class GameOverScene extends Phaser.Scene {
     constructor () {
@@ -13,11 +14,10 @@ export default class GameOverScene extends Phaser.Scene {
 
     this.add.image(650, 300, 'gameOver');
 
-    this.userScore = this.add.text(550, 150, `Total Score: ${score}`);
-  
+    this.userScore = this.add.text(500, 50, `Total Score: ${score}`, {fontStyle: 'bold', fontSize: 32,});
+    
     document.body.appendChild(form());
-
-
+   
     this.saveButton = this.add.sprite(200, 500, 'blueButton1').setInteractive();
     this.saveText = this.add.text(100, 500, 'Save Score', {
       fontSize: '32px',
@@ -31,8 +31,8 @@ export default class GameOverScene extends Phaser.Scene {
       if (this.userForm !== null) {
       this.userForm.remove();
       }
-      recordScore(username, score);
-      this.scene.start('Title');
+      // recordScore(username, score);
+      // this.scene.start('Title');
       // allScores().then((result) => {
       //   that.scene.start('Title', result);
       // });
@@ -40,6 +40,7 @@ export default class GameOverScene extends Phaser.Scene {
 
 
     Phaser.Display.Align.In.Center(this.saveText, this.saveButton);
+   
     this.menuButton = new Button(this, 650, 500, 'blueButton1', 'blueButton2', 'Replay', 'Title');
     this.leaderBoard = new Button(this, 1100, 500, 'blueButton1', 'blueButton2', 'Highest Scores', 'Leaderboard');
   }

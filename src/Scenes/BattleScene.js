@@ -66,7 +66,8 @@ export default class BattleScene extends Phaser.Scene {
                 let totalScore = `${score + scoreBattle}`;
                 this.scoreTextBattle.setText(`Score: ${totalScore}`);
                 if(totalScore <= 0){
-                    this.scene.start('GameOver');
+                    // this.scene.start('GameOver');
+                    this.scene.sleep('BattleScene');
                     this.scene.sleep('UIScene');
                 }
                 // add timer for the next turn, so will have smooth gameplay
