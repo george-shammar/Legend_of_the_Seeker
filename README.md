@@ -4,12 +4,15 @@ A warrior must seek and retrieve a lost treasure belonging to her village. In he
 ## Built With
 - Javascript.
 - HTML.
-- Bootstrap
-- Phaser3
+- Bootstrap.
+- Phaser3.
 
 ## Tools
-- Jest
-- Webpack
+- Jest.
+- Webpack.
+- Leader Board API.
+- Postman.
+- Opengamearts.
 
 ## Getting Started
 
@@ -77,4 +80,13 @@ This command installs all the game dependencies. Once you complete all installat
 - Select Dragon to Attack: Left Keyboard Key.
 - To change selection up or down: Up and Down Keyboard Key.
 - To confirm selected dragon to attack and initiate attack: Space bar.
+
+
+## Developer
+
+👤 **George Gbenle**
+
+- GitHub: [george-shammar](https://github.com/george-shammar)
+- Twitter: [@GeorgeShammar](https://twitter.com/GeorgeShammar)
+- LinkedIn: [George Gbenle](https://www.linkedin.com/in/georgegbenle/)
 
