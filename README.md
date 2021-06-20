@@ -1,5 +1,9 @@
 # Legend_of_the_Seeker
-A warrior must seek and retrieve a lost treasure belonging to his village. In his quest, he must avoid being hit by spikeballs and must also gather as much fruits (points) as possible to sustain his adventure. In the end, he must fight off the greatest villians of all, two fire-spitting dragons.  
+A warrior must seek and retrieve a lost treasure belonging to his village. In his quest, he must avoid being hit by spikeballs and must also gather as much fruits (points) as possible to sustain his adventure. In the end, he must fight off the greatest villians of all, two fire-spitting dragons.
+
+### Screenshots
+
+
 
 ## Built With
 - Javascript.
@@ -14,9 +18,14 @@ A warrior must seek and retrieve a lost treasure belonging to his village. In hi
 - Postman.
 - Opengamearts.
 
+## Live Game
+
+
+Visit the link above to play the game online or see the "Getting Started" section below to get a copy on your local computer.
+
 ## Getting Started
 
-To play the game locally on your computer, please follow these instructions.
+To play the game on your computer, please follow these instructions.
 
 - Go to the "Code" section of this repository and press the green button that says "Code". Copy the URL or the SSH key.
 - Go to your terminal and enter:
@@ -26,8 +35,8 @@ git clone URL/SSH key
 
 The URL or SSH are the links copied from the first step above.
 
-- If you don't have git installed, you can download this project and unzip it.
-- Change directory into the folder the application is saved by using 
+- If you don't have git installed, you can download this project and unzip it in your desired folder.
+- Change directory into the folder the application is saved by using the command below from the Command Line Interface or terminal.
 ```
 cd directory
 ```
@@ -38,6 +47,11 @@ Directory is the name of your folder.
 npm install
 ```
 This command installs all the game dependencies. Once you complete all installations successfully, you're ready to play.
+
+- To start playing, run:
+``` npm start
+```
+- The game will open up in your browser.
 
 ## Game Overview
 
