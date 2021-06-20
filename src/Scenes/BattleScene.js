@@ -2,10 +2,9 @@ import 'phaser';
 import {score} from './GameScene';
 
 let scoreBattle = 0;
-let gameOver = false;
 let monster1, monster2;
 let player;
-let bombs;
+let bullets;
 
 export default class BattleScene extends Phaser.Scene {
     constructor () {
@@ -47,6 +46,12 @@ export default class BattleScene extends Phaser.Scene {
        monster2.allowGravity = false;
        monster2.setVelocityY(Phaser.Math.Between(50, 200), 5);
        
+        //Add bullets
+        bullets = this.physics.add.group({
+            key: 'bullet',
+            repeat: 0,
+            setXY: { x: 305, y: 450, stepX: 70 }
+        });
        // player character - warrior
        const warrior = new PlayerCharacter(this, 1100, 469, 'girl', 5, 'Warrior', 100, 100);      
         // this.add.existing(warrior);
