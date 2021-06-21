@@ -2,15 +2,15 @@ import 'phaser';
 import Button from '../Objects/Button';
 
 export default class OptionsScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Options');
   }
 
-  create () {
+  create() {
     this.model = this.sys.game.globals.model;
 
     this.text = this.add.text(500, 100, 'Options', { fontSize: 40 });
-    
+
     this.musicButton = this.add.image(500, 200, 'checkedBox');
     this.musicText = this.add.text(550, 190, 'Music Enabled', { fontSize: 24 });
 
@@ -20,15 +20,15 @@ export default class OptionsScene extends Phaser.Scene {
     this.musicButton.setInteractive();
     this.soundButton.setInteractive();
 
-    this.musicButton.on('pointerdown', function () {
+    this.musicButton.on('pointerdown', () => {
       this.model.musicOn = !this.model.musicOn;
       this.updateAudio();
-    }.bind(this));
+    });
 
-    this.soundButton.on('pointerdown', function () {
+    this.soundButton.on('pointerdown', () => {
       this.model.soundOn = !this.model.soundOn;
       this.updateAudio();
-    }.bind(this));
+    });
 
     this.menuButton = new Button(this, 600, 500, 'blueButton1', 'blueButton2', 'Menu', 'Title');
 
@@ -47,11 +47,11 @@ export default class OptionsScene extends Phaser.Scene {
         this.model.bgMusicPlaying = true;
       }
     }
-     
+
     if (this.model.soundOn === false) {
       this.soundButton.setTexture('box');
     } else {
       this.soundButton.setTexture('checkedBox');
     }
   }
-};
+}
