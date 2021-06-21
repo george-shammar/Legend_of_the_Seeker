@@ -47,16 +47,10 @@ export default class BattleScene extends Phaser.Scene {
        player.setVelocityY(Phaser.Math.Between(50, 200), 5);
         
 
-       // player character - warrior
+       // Characters - warrior & dragons
        const warrior = new PlayerCharacter(this, 1100, 469, 'girl', 5, 'Warrior', 100, 100);      
-        // this.add.existing(warrior);
-
        const dragonblue = new Enemy(this, 850, 467, 'dragonblue', 6, 'Dragon', 50, 300);
-        // this.add.existing(dragonblue);
-       
-       
        const dragonOrange = new Enemy(this, 700, 150, 'dragonblue', 11,'Dragon2', 50, 300);
-    //    this.add.existing(dragonOrange);
        
        // array with heroes
        this.heroes = [ warrior ];
@@ -83,9 +77,9 @@ export default class BattleScene extends Phaser.Scene {
             // if its player hero
             if(this.units[this.index] instanceof PlayerCharacter) {               
                 this.events.emit('PlayerSelect', this.index);
-            } else { // else if its enemy unit
-                // pick random hero
-                var r = Math.floor(Math.random() * this.heroes.length);
+            } else { 
+                // if its enemy unit
+                let r = Math.floor(Math.random() * this.heroes.length);
                 // call the enemy's attack function 
                 this.units[this.index].attack(this.heroes[r]);
                 //Enemy fire
@@ -104,7 +98,7 @@ export default class BattleScene extends Phaser.Scene {
                     this.scene.sleep('BattleScene');
                     this.scene.sleep('UIScene');
                 }
-                // add timer for the next turn, so will have smooth gameplay
+                
                 this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
             }
         }
