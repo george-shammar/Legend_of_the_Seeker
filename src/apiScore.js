@@ -3,8 +3,8 @@ const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
 const allScores = async () => {
     try {
-      const response = await fetch(`${url}/games/${gameID}/scores`);
-      const rawData = await response.json();
+      const rawScores = await fetch(`${url}/games/${gameID}/scores/`);
+      const rawData = await rawScores.json();
       return rawData.result;
     } catch (error) {
       return error.message;
@@ -21,7 +21,7 @@ const recordScore = async (name, score) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(params),
-      mode: 'CORS'
+      mode: 'no-cors'
     });
     return response.json();
   } catch (error) {

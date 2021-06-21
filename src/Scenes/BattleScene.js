@@ -81,7 +81,7 @@ export default class BattleScene extends Phaser.Scene {
         }
         if(this.units[this.index]) {
             // if its player hero
-            if(this.units[this.index] instanceof PlayerCharacter) {                
+            if(this.units[this.index] instanceof PlayerCharacter) {               
                 this.events.emit('PlayerSelect', this.index);
             } else { // else if its enemy unit
                 // pick random hero
@@ -110,7 +110,8 @@ export default class BattleScene extends Phaser.Scene {
         }
     }
     receivePlayerSelection(action, target) {
-        if(action == 'attack') {            
+        if(action == 'attack') {
+            // let i = 0;           
             this.units[this.index].attack(this.enemies[target]);
 
             //warrior bullet
@@ -123,18 +124,22 @@ export default class BattleScene extends Phaser.Scene {
             bullets2.setVelocity(Phaser.Math.Between(0, -1800), 20);
             scoreBattle += 100;
             let totalScore = `${score + scoreBattle}`;
-            this.scoreTextBattle.setText(`Score: ${totalScore}`);             
+            this.scoreTextBattle.setText(`Score: ${totalScore}`);
+            
+            //winner
+            // if(i === 2) {
+            //     this.scene.start('GameOver');
+            //     this.title = this.add.text(650, 20, 'YOU WON!!!!:', {
+            //     fontSize: 32,
+            //     fontStyle: 'bold',
+            //     color: 'white',
+            //     align: 'center',
+            //     });
+            // this.title.setOrigin(0.5);
+            // } i += 1;
         }
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this }); 
-        
-        //winner
-        // this.title = this.add.text(650, 100, 'YOU WON!!!!:', {
-        //     fontSize: 32,
-        //     fontStyle: 'bold',
-        //     color: 'white',
-        //     align: 'center',
-        //   });
-        // this.title.setOrigin(0.5);
+    
     }
 }
 

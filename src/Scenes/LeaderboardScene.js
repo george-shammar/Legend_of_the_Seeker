@@ -29,20 +29,19 @@ export default class LeaderBoardScene extends Phaser.Scene {
   
   getScores = async () => {
     const data = await allScores();
+    const highestScores = data.sort((a, b) => b.score - a.score).slice(0, 10);
 
-    console.log(data);
-    // data.sort((a, b) => b.score - a.score)
-    //   .slice(0, 5)
-    //   .map((game, index) => {
-    //     const text = `${game.user} - Score: ${game.score}`;
-    //     this.add.text(800 / 2, (65 * (index + 1.1)) + 100, text, {
-    //       fontFamily: 'monospace',
-    //       fontSize: '28px',
-    //       color: 'white',
-    //       align: 'center',
-    //       lineHeight: '1',
-    //     }).setOrigin(0.5, 0.5);
+    console.log(highestScores);
+    // .map((game, index) => {
+    //   const text = `${game.user} - Score: ${game.score}`;
+    // this.add.text(650, 100, text, {
+    //     fontFamily: 'monospace',
+    //     fontSize: '28px',
+    //     color: 'white',
+    //     align: 'center',
+    //     lineHeight: '1',
+    //   }).setOrigin(0.5, 0.5);
     //     return text;
-    //   });
+    //    });
   };
 }
