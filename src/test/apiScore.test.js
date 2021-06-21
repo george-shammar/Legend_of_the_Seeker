@@ -108,7 +108,11 @@
             fetch.mockImplementationOnce(() => Promise.resolve({ json: () => Promise.resolve('Successfully created record') }));
             await expect(recordScore('Django', 8000)).resolves.not.toBeUndefined();
         });
-  
+        
+        it('should NOT resolve to an Null response', async () => {
+            fetch.mockImplementationOnce(() => Promise.resolve({ json: () => Promise.resolve('Successfully created record') }));
+            await expect(recordScore('Django', 8000)).resolves.not.toBeNull();
+        });
 
     });
 
