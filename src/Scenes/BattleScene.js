@@ -104,8 +104,7 @@ export default class BattleScene extends Phaser.Scene {
         }
     }
     receivePlayerSelection(action, target) {
-        if(action == 'attack') {
-            // let i = 0;           
+        if(action == 'attack') {           
             this.units[this.index].attack(this.enemies[target]);
 
             //warrior bullet
@@ -119,21 +118,8 @@ export default class BattleScene extends Phaser.Scene {
             scoreBattle += 100;
             let totalScore = `${score + scoreBattle}`;
             this.scoreTextBattle.setText(`Score: ${totalScore}`);
-            
-            //winner
-            // if(i === 2) {
-            //     this.scene.start('GameOver');
-            //     this.title = this.add.text(650, 20, 'YOU WON!!!!:', {
-            //     fontSize: 32,
-            //     fontStyle: 'bold',
-            //     color: 'white',
-            //     align: 'center',
-            //     });
-            // this.title.setOrigin(0.5);
-            // } i += 1;
         }
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this }); 
-    
     }
 }
 
@@ -146,7 +132,7 @@ const Unit = new Phaser.Class({
         Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame)
         this.type = type;
         this.maxHp = this.hp = hp;
-        this.damage = damage; // default damage                
+        this.damage = damage;            
     },
     attack(target) {
         target.takeDamage(this.damage);
@@ -178,7 +164,6 @@ const PlayerCharacter = new Phaser.Class({
     initialize:
     function PlayerCharacter(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
-        // flip the image so I don't have to edit it manually
         this.flipX = true;
         
         this.setScale(2);
