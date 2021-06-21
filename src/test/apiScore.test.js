@@ -30,6 +30,12 @@
             expect(response).not.toBeNull();
         });
 
+        it('should return a response with a name/user property', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(response[0].user).toEqual('Django');
+        });
+
         it('should return a response with a name/user property type string', async () => {
             fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
             const response = await allScores();
@@ -76,6 +82,12 @@
             fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
             const response = await allScores();
             expect(response[0].score).not.toBeUndefined();
+        });
+
+        it('should NOT return a response that is Null', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(response[0].score).not.toBeNull();
         });
     });
 
