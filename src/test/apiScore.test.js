@@ -100,10 +100,15 @@
 
     describe('recordScore', () => {
         it('should resolve succesfully with users input', async () => {
-          fetch.mockImplementationOnce(() => Promise.resolve({ json: () => Promise.resolve('Leaderboard score created correctly.') }));
-          await expect(recordScore('Django', 8000)).resolves.toEqual('Leaderboard score created correctly.');
+          fetch.mockImplementationOnce(() => Promise.resolve({ json: () => Promise.resolve('Successfully created record') }));
+          await expect(recordScore('Django', 8000)).resolves.toEqual('Successfully created record');
         });
 
+        it('should NOT resolve to an undefined response', async () => {
+            fetch.mockImplementationOnce(() => Promise.resolve({ json: () => Promise.resolve('Successfully created record') }));
+            await expect(recordScore('Django', 8000)).resolves.not.toBeUndefined();
+        });
+  
 
     });
 
