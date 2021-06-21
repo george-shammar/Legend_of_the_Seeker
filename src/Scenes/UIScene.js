@@ -76,7 +76,7 @@ export default class UIScene extends Phaser.Scene {
         this.heroesMenu.remap(heroes);
     }
     remapEnemies() {
-        var enemies = this.battleScene.enemies;
+        let enemies = this.battleScene.enemies;
         this.enemiesMenu.remap(enemies);
     }
     onKeyInput(event) {
@@ -96,7 +96,7 @@ export default class UIScene extends Phaser.Scene {
 }
 
 
-var MenuItem = new Phaser.Class({
+const MenuItem = new Phaser.Class({
     Extends: Phaser.GameObjects.Text,
     
     initialize:
@@ -115,7 +115,7 @@ var MenuItem = new Phaser.Class({
     
 });
 
-var Menu = new Phaser.Class({
+const Menu = new Phaser.Class({
     Extends: Phaser.GameObjects.Container,
     
     initialize:
@@ -179,7 +179,7 @@ var Menu = new Phaser.Class({
     }
 });
 
-var HeroesMenu = new Phaser.Class({
+const HeroesMenu = new Phaser.Class({
     Extends: Menu,
     
     initialize:
@@ -193,7 +193,7 @@ var HeroesMenu = new Phaser.Class({
     }
 });
  
-var ActionsMenu = new Phaser.Class({
+const ActionsMenu = new Phaser.Class({
     Extends: Menu,
     
     initialize:
@@ -209,7 +209,7 @@ var ActionsMenu = new Phaser.Class({
     
 });
  
-var EnemiesMenu = new Phaser.Class({
+const EnemiesMenu = new Phaser.Class({
     Extends: Menu,
     
     initialize:
