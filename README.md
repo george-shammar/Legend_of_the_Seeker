@@ -79,7 +79,6 @@ This command installs all the game dependencies. Once you complete all installat
 - Each time you get hit by a dragon, you loose 300 points.
 - Each time you hit a dragon, you gain 100 points. There is a point deficit of 200 points. So, the longer you remain in the Battle Scene, the more likely it is for you to exhaust all the points you have gathered from the World Scene.
 - Once your points reach 0, you have lost the Battle and the game is over.
-- Once you hit each dragon five times (A total of ten times) without exhausting your points, then you win.
 - Your final score at that point gets registered with your name on the Leader Baord.
 
 ### Leader Board
