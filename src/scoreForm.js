@@ -1,7 +1,6 @@
 const form = () => {
     const formHead = document.createElement('div');
     formHead.setAttribute('id', 'form');
-
     const scoreInput = document.createElement('input');
     scoreInput.setAttribute('type', 'text');
     scoreInput.setAttribute('id', 'score');
