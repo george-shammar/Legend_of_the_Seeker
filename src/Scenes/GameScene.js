@@ -35,8 +35,6 @@ export class GameScene extends Phaser.Scene {
 
     //Add player sprite.
     player = this.physics.add.sprite(100, 450, 'girl').setScale(2);
-    
-    
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
     player.body.setGravityY(300);
@@ -81,9 +79,8 @@ export class GameScene extends Phaser.Scene {
 
     //Pick up tomatoes
     this.physics.add.overlap(player, tomatoes, this.collectTomato, null, this);
-
     this.cursors = this.input.keyboard.createCursorKeys();
-
+    
     this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
     bombs = this.physics.add.group();
