@@ -15,6 +15,10 @@ module.exports = {
           {
             test: [ /\.vert$/, /\.frag$/ ],
             use: 'raw-loader'
+          },
+          {
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader'],
           }
         ]
     },
