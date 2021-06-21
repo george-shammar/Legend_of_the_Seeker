@@ -12,6 +12,7 @@ const form = () => {
 
     const submitButton = document.createElement('button');
     submitButton.setAttribute('class', 'btn btn-primary mx-2');
+    submitButton.setAttribute('id', 'click-submit');
     submitButton.innerHTML = "Save Score";
 
     formHead.appendChild(submitButton);

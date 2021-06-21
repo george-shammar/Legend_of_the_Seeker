@@ -26,17 +26,16 @@ export default class GameOverScene extends Phaser.Scene {
 
     const that = this;
       this.userForm = document.getElementById('form');
-      this.saveButton.on('pointerdown', () => {
-      const username = document.getElementById('score').value;
-      if (this.userForm !== null) {
-      this.userForm.remove();
-      }
-      // recordScore(username, score);
-      // this.scene.start('Title');
-      // allScores().then((result) => {
-      //   that.scene.start('Title', result);
-      // });
-    });
+      this.submit = document.getElementById('click-submit');
+
+      this.submit.onclick = () => {
+        const username = document.getElementById('score').value;
+        if (this.userForm !== null) {
+          this.userForm.remove();
+        }
+      recordScore(username, score);
+    }
+   
 
 
     Phaser.Display.Align.In.Center(this.saveText, this.saveButton);
