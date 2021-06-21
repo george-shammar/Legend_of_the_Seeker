@@ -41,5 +41,16 @@ export default class InstructionScene extends Phaser.Scene {
         this.control1 = this.add.text(200, 360, '1. Move Forward = Right Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
         this.control2 = this.add.text(200, 390, '2. Move Backward = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
         this.control3 = this.add.text(200, 420, '3. Jump = Up Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
+
+        this.title = this.add.text(630, 460, 'Battle Scene(Second Scene)', {
+            fontSize: 24,
+            fontStyle: 'bold',
+            color: 'white',
+            align: 'center',
+          });
+        this.title.setOrigin(0.5);
+
+        this.battleControl1 = this.add.text(200, 490, '1. Select Dragon to Attack = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
+        this.battleControl1 = this.add.text(200, 490, '1. To Attack = Space Bar (Keyboard)', { fontSize: '18px', fill: '#fff' });
     }
 }
