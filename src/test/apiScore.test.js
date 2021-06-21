@@ -59,6 +59,24 @@
             const response = await allScores();
             expect(typeof response[0].score).toEqual('number');
         });
+
+        it('should return a response with users score', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(response[0].score).toEqual(8000);
+        });
+
+        it('should NOT return a response that is wrong', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(response[0].score).not.toEqual(82000);
+        });
+
+        it('should NOT return a response that is undefined', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(response[0].score).not.toBeUndefined();
+        });
     });
 
 
