@@ -12,10 +12,16 @@
     });
 
     describe('allScores', () => {
-        it('should be defined', async () => {
+        it('should returned a defined response', async () => {
           fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
           const response = await allScores();
           expect(response).toBeDefined();
+        });
+
+        it('should NOT return an empty response', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(response).not.toBe("");
         });
     });
 
