@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import { score } from './GameScene';
 
 let scoreBattle = 0;
@@ -8,6 +8,56 @@ let player;
 let bullets; let
   bullets2;
 
+
+
+  const Unit = new Phaser.Class({
+    Extends: Phaser.GameObjects.Sprite,
+  
+    initialize:
+  
+      function Unit(scene, x, y, texture, frame, type, hp, damage) {
+        Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
+        this.type = type;
+        this.maxHp = this.hp = hp;
+        this.damage = damage;
+      },
+    attack(target) {
+      target.takeDamage(this.damage);
+      this.scene.events.emit('Message', `${this.type} attacks ${target.type} for ${this.damage} points`);
+    },
+    takeDamage(damage) {
+      this.hp -= damage;
+      if (this.hp <= 0) {
+        this.hp = 0;
+        this.alive = false;
+      }
+    },
+  });
+  
+const PlayerCharacter = new Phaser.Class({
+  Extends: Unit,
+
+  initialize:
+      function PlayerCharacter(scene, x, y, texture, frame, type, hp, damage) {
+        Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
+        this.flipX = true;
+
+        this.setScale(2);
+      },
+});
+
+const Enemy = new Phaser.Class({
+  Extends: Unit,
+
+  initialize:
+    function Enemy(scene, x, y, texture, frame, type, hp, damage) {
+      Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
+
+      this.setScale(2);
+    },
+});
+
+
 export default class BattleScene extends Phaser.Scene {
   constructor() {
     super('BattleScene');
@@ -15,7 +65,6 @@ export default class BattleScene extends Phaser.Scene {
 
   create() {
     let mud;
-
     // change the background to battlebg
     this.add.image(650, 300, 'battlebg');
 
@@ -124,50 +173,3 @@ export default class BattleScene extends Phaser.Scene {
     this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
   }
 }
-
-const Unit = new Phaser.Class({
-  Extends: Phaser.GameObjects.Sprite,
-
-  initialize:
-
-    function Unit(scene, x, y, texture, frame, type, hp, damage) {
-      Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
-      this.type = type;
-      this.maxHp = this.hp = hp;
-      this.damage = damage;
-    },
-  attack(target) {
-    target.takeDamage(this.damage);
-    this.scene.events.emit('Message', `${this.type} attacks ${target.type} for ${this.damage} points`);
-  },
-  takeDamage(damage) {
-    this.hp -= damage;
-    if (this.hp <= 0) {
-      this.hp = 0;
-      this.alive = false;
-    }
-  },
-});
-
-const Enemy = new Phaser.Class({
-  Extends: Unit,
-
-  initialize:
-    function Enemy(scene, x, y, texture, frame, type, hp, damage) {
-      Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
-
-      this.setScale(2);
-    },
-});
-
-const PlayerCharacter = new Phaser.Class({
-  Extends: Unit,
-
-  initialize:
-    function PlayerCharacter(scene, x, y, texture, frame, type, hp, damage) {
-      Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
-      this.flipX = true;
-
-      this.setScale(2);
-    },
-});
