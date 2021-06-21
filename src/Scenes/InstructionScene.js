@@ -18,8 +18,8 @@ export default class InstructionScene extends Phaser.Scene {
         this.objective2 = this.add.text(200, 90, '2. Once you get hit by the spike balls, you get thrown into the Battle Scene(Scene Two) to fight the Dragons', { fontSize: '18px', fill: '#fff' });
         this.objective3 = this.add.text(200, 120, '3. The difficulty increases with increasing number of fruits gathered. More spike balls are added.', { fontSize: '18px', fill: '#fff' });
         this.objective4 = this.add.text(200, 150, '4. Defeat the two Dragons in the Battle Scene and you win. Remember to maintain a high score.', { fontSize: '18px', fill: '#fff' });
-        this.objective5 = this.add.text(200, 180, '5. Each time a Dragon attacks, you loose 300 points. You gain 100 points each you attack the Dragons', { fontSize: '18px', fill: '#fff' });
-        this.objective6 = this.add.text(200, 210, '6. Register your total score to Leader Baord after the game', { fontSize: '18px', fill: '#fff' });
+        this.objective5 = this.add.text(200, 180, '5. Each time a Dragon attacks, you loose 300 points. You gain 100 points each time you attack the Dragons', { fontSize: '18px', fill: '#fff' });
+        this.objective6 = this.add.text(200, 210, '6. Register your total score to the Leader Baord after the game', { fontSize: '18px', fill: '#fff' });
         
         this.title = this.add.text(630, 300, 'GAME CONTROLS', {
             fontSize: 32,
@@ -51,6 +51,6 @@ export default class InstructionScene extends Phaser.Scene {
         this.title.setOrigin(0.5);
 
         this.battleControl1 = this.add.text(200, 490, '1. Select Dragon to Attack = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
-        this.battleControl1 = this.add.text(200, 490, '1. To Attack = Space Bar (Keyboard)', { fontSize: '18px', fill: '#fff' });
+        this.battleControl1 = this.add.text(200, 510, '1. To Attack = Space Bar (Keyboard)', { fontSize: '18px', fill: '#fff' });
     }
 }
