@@ -8,7 +8,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
   }
 
   create() {
-    this.title = this.add.text(650, 100, 'HIGEST SCORES:', {
+    this.title = this.add.text(650, 50, 'HIGEST SCORES:', {
       fontSize: 32,
       fontStyle: 'bold',
       color: 'white',
@@ -16,7 +16,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
-    this.getScores();
+    this.displayHighestScores();
 
     this.menuButton = this.add.sprite(650, 500, 'blueButton1').setInteractive();
     this.menuText = this.add.text(0, 0, 'Menu', { fontSize: '32px', fill: '#fff' });
@@ -27,11 +27,15 @@ export default class LeaderBoardScene extends Phaser.Scene {
   }
 
   
-  getScores = async () => {
+  displayHighestScores = async () => {
     const data = await allScores();
     const highestScores = data.sort((a, b) => b.score - a.score).slice(0, 10);
 
-    console.log(highestScores);
+    const header = "Player                    Score";
+    this.add.text(450, 100, header, {fontSize: 28,
+      fontStyle: 'bold',
+      color: 'white'});
+    
     // .map((game, index) => {
     //   const text = `${game.user} - Score: ${game.score}`;
     // this.add.text(650, 100, text, {
