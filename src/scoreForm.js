@@ -1,5 +1,5 @@
 const form = () => {
-    const formHead = document.createElement('div');
+    const formHead = document.createElement('form');
     formHead.setAttribute('id', 'form');
     formHead.setAttribute('class', 'float-form');
     const scoreInput = document.createElement('input');
