@@ -41,6 +41,12 @@
             const response = await allScores();
             expect(typeof response[0].user).not.toEqual([]);
         });
+
+        it('should NOT return a response with a name/user property that is null', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(typeof response[0].user).not.toBeNull();
+        });
     });
 
 
