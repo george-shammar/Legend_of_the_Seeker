@@ -9,6 +9,7 @@ import CreditsScene from './Scenes/CreditsScene';
 import GameOverScene from './Scenes/GameOverScene';
 import BattleScene from './Scenes/BattleScene';
 import LeaderboardScene from './Scenes/LeaderboardScene';
+import InstructionScene from './Scenes/InstructionScene';
 import UIScene from './Scenes/UIScene';
 import Model from './Model';
 import './style.css';
