@@ -33,6 +33,7 @@
     "jest-fetch-mock": "^3.0.3",
     "phaser": "^3.55.2",
     "raw-loader": "^0.5.1",
+    "regenerator-runtime": "^0.13.7",
     "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
