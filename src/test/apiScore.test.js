@@ -98,5 +98,13 @@
         });
     });
 
+    describe('recordScore', () => {
+        it('should resolve succesfully with users input', async () => {
+          fetch.mockImplementationOnce(() => Promise.resolve({ json: () => Promise.resolve('Leaderboard score created correctly.') }));
+          await expect(recordScore('Django', 8000)).resolves.toEqual('Leaderboard score created correctly.');
+        });
+
+
+    });
 
 });
