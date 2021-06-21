@@ -5,8 +5,8 @@
 import form from '../scoreForm';
 
 describe('form', () => {
-    
-    it('add two numbers', () => {
-      expect(form(2, 3)).toBe(5);
-    });
+  const scoreForm = form();
+  it('should create a user form to record score', () => {
+    expect(scoreForm.tagName).toBe('FORM');
+  });
 });
