@@ -21,7 +21,7 @@ export default class InstructionScene extends Phaser.Scene {
     this.objective5 = this.add.text(200, 180, '5. Each time a Dragon attacks, you loose 300 points. You gain 100 points each time you attack the Dragons', { fontSize: '18px', fill: '#fff' });
     this.objective6 = this.add.text(200, 210, '6. Register your total score to the Leader Baord after the game', { fontSize: '18px', fill: '#fff' });
 
-    this.title = this.add.text(630, 300, 'GAME CONTROLS', {
+    this.title = this.add.text(630, 260, 'GAME CONTROLS', {
       fontSize: 32,
       fontStyle: 'bold',
       color: 'white',
@@ -29,7 +29,7 @@ export default class InstructionScene extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
-    this.title = this.add.text(630, 330, 'World Scene(First Scene)', {
+    this.title = this.add.text(630, 290, 'World Scene(First Scene)', {
       fontSize: 24,
       fontStyle: 'bold',
       color: 'white',
@@ -38,11 +38,11 @@ export default class InstructionScene extends Phaser.Scene {
     this.title.setOrigin(0.5);
 
 
-    this.control1 = this.add.text(200, 360, '1. Move Forward = Right Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
-    this.control2 = this.add.text(200, 390, '2. Move Backward = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
-    this.control3 = this.add.text(200, 420, '3. Jump = Up Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
+    this.control1 = this.add.text(200, 310, '1. Move Forward = Right Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
+    this.control2 = this.add.text(200, 340, '2. Move Backward = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
+    this.control3 = this.add.text(200, 370, '3. Jump = Up Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
 
-    this.title = this.add.text(630, 460, 'Battle Scene(Second Scene)', {
+    this.title = this.add.text(630, 400, 'Battle Scene(Second Scene)', {
       fontSize: 24,
       fontStyle: 'bold',
       color: 'white',
@@ -50,7 +50,14 @@ export default class InstructionScene extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
-    this.battleControl1 = this.add.text(200, 490, '1. Select Dragon to Attack = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
-    this.battleControl1 = this.add.text(200, 510, '1. To Attack = Space Bar (Keyboard)', { fontSize: '18px', fill: '#fff' });
+    this.battleControl1 = this.add.text(200, 430, '1. Select Dragon to Attack = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
+    this.battleControl1 = this.add.text(200, 460, '1. To Attack = Space Bar (Keyboard)', { fontSize: '18px', fill: '#fff' });
+
+    this.menuButton = this.add.sprite(650, 560, 'blueButton1').setInteractive();
+    this.menuText = this.add.text(0, 0, 'Menu', { fontSize: '32px', fill: '#fff' });
+    Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
+    this.menuButton.on('pointerdown', () => {
+      this.scene.start('Title');
+    });
   }
 }
