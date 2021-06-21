@@ -43,7 +43,7 @@ describe('form', () => {
   test('Should have a submit button for user to confirm input', () => {
     document.body.innerHTML = '<button class="btn butoon btn-primary mx-2" id="click-submit">Save Score</button>';
     const submit = document.getElementById('click-submit');
-    expect(input.innerHTML).toContain("");
+    expect(submit.innerHTML).toContain("Save Score");
   });
 
 
