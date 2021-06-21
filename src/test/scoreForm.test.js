@@ -46,5 +46,11 @@ describe('form', () => {
     expect(submit.innerHTML).toContain("Save Score");
   });
 
+  test('Submit button should not be empty', () => {
+    document.body.innerHTML = '<button class="btn butoon btn-primary mx-2" id="click-submit">Save Score</button>';
+    const submit = document.getElementById('click-submit');
+    expect(submit.innerHTML).not.toBe("");
+  });
+
 
 });
