@@ -47,6 +47,18 @@
             const response = await allScores();
             expect(typeof response[0].user).not.toBeNull();
         });
+
+        it('should NOT return a response with a name/user property that is defined', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(typeof response[0].user).not.toBeUndefined();
+        });
+
+        it('should return a response for the score property with a data type of number', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(typeof response[0].score).toEqual('number');
+        });
     });
 
 
