@@ -13,4 +13,8 @@ describe('form', () => {
   it('should not be null', () => {
     expect(scoreForm.tagName).not.toBeNull();
   });
+
+  it('should not create any other element that is not form', () => {
+    expect(scoreForm.tagName).not.toBe('div');
+  });
 });
