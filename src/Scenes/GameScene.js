@@ -1,6 +1,5 @@
 import 'phaser';
     
-
 let player;
 let score = 0;
 let scoreText;
