@@ -94,7 +94,12 @@ This command installs all the game dependencies. Once you complete all installat
 - To change selection up or down: Up and Down Keyboard Key.
 - To confirm selected dragon to attack and initiate attack: Space bar.
 
-
+## Tests
+- All non phaser3 classes and functions were tested using Jest.
+- To see the tests, run the code below in your Command Line Interface:
+```
+npm run test
+```
 ## Developer
 
 👤 **George Gbenle**
