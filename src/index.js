@@ -11,6 +11,7 @@ import BattleScene from './Scenes/BattleScene';
 import LeaderboardScene from './Scenes/LeaderboardScene';
 import UIScene from './Scenes/UIScene';
 import Model from './Model';
+import './style.css';
 
 class Game extends Phaser.Game {
   constructor () {
