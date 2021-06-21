@@ -52,5 +52,16 @@ describe('form', () => {
     expect(submit.innerHTML).not.toBe("");
   });
 
+  test('Submit button should NOT contain contain non-DOM elements.', () => {
+    document.body.innerHTML = '<button class="btn butoon btn-primary mx-2" id="click-submit">Save Score</button>';
+    const submit = document.getElementById('click-submit');
+    expect(submit.innerHTML).not.toBe("Submit");
+  });
+
+  test('Submit button should NOT be undefined.', () => {
+    document.body.innerHTML = '<button class="btn butoon btn-primary mx-2" id="click-submit">Save Score</button>';
+    const submit = document.getElementById('click-submit');
+    expect(submit.innerHTML).not.toBeUndefined();
+  });
 
 });
