@@ -48,21 +48,5 @@ export default class LeaderBoardScene extends Phaser.Scene {
         color: 'white'});
         space += 30;
       });
-    // const eachPlayer = "GeorgeShammar                   5000";
-    // this.add.text(450, 100+space, eachPlayer, {fontSize: 18,
-    //   fontStyle: 'bold',
-    //   color: 'white'});             
-    
-    // .map((game, index) => {
-    //   const text = `${game.user} - Score: ${game.score}`;
-    // this.add.text(650, 100, text, {
-    //     fontFamily: 'monospace',
-    //     fontSize: '28px',
-    //     color: 'white',
-    //     align: 'center',
-    //     lineHeight: '1',
-    //   }).setOrigin(0.5, 0.5);
-    //     return text;
-    //    });
   };
 }
