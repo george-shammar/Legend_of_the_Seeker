@@ -64,4 +64,10 @@ describe('form', () => {
     expect(submit.innerHTML).not.toBeUndefined();
   });
 
+  test('Submit button should NOT be Null.', () => {
+    document.body.innerHTML = '<button class="btn butoon btn-primary mx-2" id="click-submit">Save Score</button>';
+    const submit = document.getElementById('click-submit');
+    expect(submit.innerHTML).not.toBeNull();
+  });
+
 });
