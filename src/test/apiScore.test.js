@@ -36,6 +36,13 @@
             expect(response[0].user).toEqual('Django');
         });
 
+        it('should NOT return a response with a wrong name/user property', async () => {
+            fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
+            const response = await allScores();
+            expect(response[0].user).not.toEqual('Hommer');
+        });
+
+
         it('should return a response with a name/user property type string', async () => {
             fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 8000, user: 'Django' }] }));
             const response = await allScores();
