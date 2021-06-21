@@ -1,4 +1,5 @@
-import 'phaser';
+/* eslint-disable func-names */
+import Phaser from 'phaser';
 import config from '../Config/config';
 
 export default class CreditsScene extends Phaser.Scene {
@@ -29,6 +30,7 @@ export default class CreditsScene extends Phaser.Scene {
       ease: 'Power1',
       duration: 3000,
       delay: 1000,
+      /* eslint-disable no-unused-expressions */
       onComplete() {
         this.destroy;
       },

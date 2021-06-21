@@ -1,5 +1,5 @@
-import 'phaser';
-import { allScores, recordScore } from '../apiScore';
+import Phaser from 'phaser';
+import { recordScore } from '../apiScore';
 import { score } from './GameScene';
 import form from '../scoreForm';
 import Button from '../Objects/Button';
@@ -16,7 +16,6 @@ export default class GameOverScene extends Phaser.Scene {
 
     document.body.appendChild(form());
 
-    const that = this;
     this.userForm = document.getElementById('form');
     this.submit = document.getElementById('click-submit');
 

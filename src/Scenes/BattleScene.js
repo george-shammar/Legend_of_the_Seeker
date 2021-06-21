@@ -9,31 +9,31 @@ let bullets; let
   bullets2;
 
 
+const Unit = new Phaser.Class({
+  Extends: Phaser.GameObjects.Sprite,
 
-  const Unit = new Phaser.Class({
-    Extends: Phaser.GameObjects.Sprite,
-  
-    initialize:
-  
+  initialize:
+
       function Unit(scene, x, y, texture, frame, type, hp, damage) {
         Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
         this.type = type;
+        /* eslint-disable no-multi-assign */
         this.maxHp = this.hp = hp;
         this.damage = damage;
       },
-    attack(target) {
-      target.takeDamage(this.damage);
-      this.scene.events.emit('Message', `${this.type} attacks ${target.type} for ${this.damage} points`);
-    },
-    takeDamage(damage) {
-      this.hp -= damage;
-      if (this.hp <= 0) {
-        this.hp = 0;
-        this.alive = false;
-      }
-    },
-  });
-  
+  attack(target) {
+    target.takeDamage(this.damage);
+    this.scene.events.emit('Message', `${this.type} attacks ${target.type} for ${this.damage} points`);
+  },
+  takeDamage(damage) {
+    this.hp -= damage;
+    if (this.hp <= 0) {
+      this.hp = 0;
+      this.alive = false;
+    }
+  },
+});
+
 const PlayerCharacter = new Phaser.Class({
   Extends: Unit,
 
@@ -64,8 +64,8 @@ export default class BattleScene extends Phaser.Scene {
   }
 
   create() {
-    let mud;
-    // change the background to battlebg
+    let mud; /* eslint-disable prefer-const */
+
     this.add.image(650, 300, 'battlebg');
 
     mud = this.physics.add.staticGroup();
@@ -118,6 +118,7 @@ export default class BattleScene extends Phaser.Scene {
   }
 
   nextTurn() {
+    /* eslint-disable no-plusplus */
     this.index++;
     // if there are no more units, we start again from the first one
     if (this.index >= this.units.length) {
@@ -155,7 +156,7 @@ export default class BattleScene extends Phaser.Scene {
   }
 
   receivePlayerSelection(action, target) {
-    if (action == 'attack') {
+    if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
 
       // warrior bullet

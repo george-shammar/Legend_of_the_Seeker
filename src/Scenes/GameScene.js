@@ -1,10 +1,9 @@
-import 'phaser';
+/* eslint-disable import/no-mutable-exports */
+import Phaser from 'phaser';
 
 let player;
 let score = 0;
-let scoreText;
 let bombs;
-const gameOver = false;
 let tomatoes;
 
 export class GameScene extends Phaser.Scene {
@@ -13,13 +12,13 @@ export class GameScene extends Phaser.Scene {
   }
 
   create() {
+    /* eslint-disable prefer-const */
     let mud;
     let groundmiddle;
 
-    // Add background world.
+
     this.add.image(650, 300, 'world');
 
-    // Add platform
     groundmiddle = this.physics.add.staticGroup();
     groundmiddle.create(310, 188, 'groundmiddle');
     groundmiddle.create(450, 188, 'groundmiddle');
@@ -126,7 +125,7 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  hitBomb(player, bomb) {
+  hitBomb(player) {
     this.physics.pause();
     player.anims.play('turn');
     this.scene.switch('BattleScene');
