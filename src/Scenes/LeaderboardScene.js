@@ -36,6 +36,19 @@ export default class LeaderBoardScene extends Phaser.Scene {
       fontStyle: 'bold',
       color: 'white'});
     
+      let space = 50;
+      highestScores.forEach(element => {
+        const eachPlayer = `${element.user}                    ${element.score}`;
+        this.add.text(450, 100+space, eachPlayer, {fontSize: 18,
+          fontStyle: 'bold',
+          color: 'white'});
+          space += 50;
+      });
+    // const eachPlayer = "GeorgeShammar                   5000";
+    // this.add.text(450, 100+space, eachPlayer, {fontSize: 18,
+    //   fontStyle: 'bold',
+    //   color: 'white'});             
+    
     // .map((game, index) => {
     //   const text = `${game.user} - Score: ${game.score}`;
     // this.add.text(650, 100, text, {
