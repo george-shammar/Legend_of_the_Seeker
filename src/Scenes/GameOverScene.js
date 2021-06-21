@@ -3,7 +3,6 @@ import {allScores, recordScore} from '../apiScore';
 import {score} from './GameScene';
 import form from '../scoreForm';
 import Button from '../Objects/Button';
-import config from '../Config/config';
 
 export default class GameOverScene extends Phaser.Scene {
     constructor () {
