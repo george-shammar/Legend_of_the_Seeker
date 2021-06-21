@@ -17,12 +17,6 @@ export default class GameOverScene extends Phaser.Scene {
     this.userScore = this.add.text(500, 100, `Total Score: ${score}`, {fontStyle: 'bold', fontSize: 32});
     
     document.body.appendChild(form());
-   
-    this.saveButton = this.add.sprite(200, 500, 'blueButton1').setInteractive();
-    this.saveText = this.add.text(100, 500, 'Save Score', {
-      fontSize: '32px',
-      fill: '#fff',
-    });
 
     const that = this;
       this.userForm = document.getElementById('form');
@@ -36,11 +30,7 @@ export default class GameOverScene extends Phaser.Scene {
       recordScore(username, score);
     }
    
-
-
-    Phaser.Display.Align.In.Center(this.saveText, this.saveButton);
-   
-    this.menuButton = new Button(this, 650, 500, 'blueButton1', 'blueButton2', 'Replay', 'Title');
-    this.leaderBoard = new Button(this, 1100, 500, 'blueButton1', 'blueButton2', 'Highest Scores', 'Leaderboard');
+    this.menuButton = new Button(this, 200, 500, 'blueButton1', 'blueButton2', 'Replay', 'Title');
+    this.leaderBoard = new Button(this, 1000, 500, 'blueButton1', 'blueButton2', 'Highest Scores', 'Leaderboard');
   }
 }
