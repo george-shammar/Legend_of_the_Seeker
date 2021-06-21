@@ -9,4 +9,8 @@ describe('form', () => {
   it('should create a user form to record score', () => {
     expect(scoreForm.tagName).toBe('FORM');
   });
+
+  it('should not be null', () => {
+    expect(scoreForm.tagName).not.toBeNull();
+  });
 });
