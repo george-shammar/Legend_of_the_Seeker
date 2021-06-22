@@ -56,7 +56,6 @@ const Enemy = new Phaser.Class({
     },
 });
 
-
 export default class BattleScene extends Phaser.Scene {
   constructor() {
     super('BattleScene');

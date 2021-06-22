@@ -1,6 +1,5 @@
 import Phaser from 'phaser';
 
-
 const MenuItem = new Phaser.Class({
   Extends: Phaser.GameObjects.Text,
 
@@ -177,7 +176,6 @@ export default class UIScene extends Phaser.Scene {
 
     this.graphics.strokeRect(660, 530, 100, 70);
     this.graphics.fillRect(660, 530, 100, 70);
-
 
     // basic container to hold all menus
     this.menus = this.add.container();
