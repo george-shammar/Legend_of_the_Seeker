@@ -37,7 +37,6 @@ export default class InstructionScene extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
-
     this.control1 = this.add.text(200, 310, '1. Move Forward = Right Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
     this.control2 = this.add.text(200, 340, '2. Move Backward = Left Key (Keyboard)', { fontSize: '18px', fill: '#fff' });
     this.control3 = this.add.text(200, 370, '3. Jump = Up Key (Keyboard)', { fontSize: '18px', fill: '#fff' });

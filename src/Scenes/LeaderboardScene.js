@@ -1,7 +1,6 @@
 import Phaser from 'phaser';
 import { allScores } from '../apiScore';
 
-
 export default class LeaderBoardScene extends Phaser.Scene {
   constructor() {
     super('Leaderboard');
@@ -25,7 +24,6 @@ export default class LeaderBoardScene extends Phaser.Scene {
       this.scene.start('Title');
     });
   }
-
 
   displayHighestScores = async () => {
     const data = await allScores();

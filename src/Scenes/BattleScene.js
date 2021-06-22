@@ -8,7 +8,6 @@ let player;
 let bullets; let
   bullets2;
 
-
 const Unit = new Phaser.Class({
   Extends: Phaser.GameObjects.Sprite,
 
@@ -72,7 +71,6 @@ export default class BattleScene extends Phaser.Scene {
     mud.create(450, 568, 'mud').setScale(3).refreshBody();
     mud.create(120, 400, 'groundmiddle');
 
-
     // create monster
     monster1 = this.physics.add.sprite(350, 450, 'dragonblue').setScale(2);
     monster1.setBounce(1);
@@ -95,7 +93,6 @@ export default class BattleScene extends Phaser.Scene {
     this.physics.add.collider(player, mud);
     player.allowGravity = false;
     player.setVelocityY(Phaser.Math.Between(50, 200), 5);
-
 
     // Characters - warrior & dragons
     const warrior = new PlayerCharacter(this, 1100, 469, 'girl', 5, 'Warrior', 100, 100);

@@ -16,7 +16,6 @@ export class GameScene extends Phaser.Scene {
     let mud;
     let groundmiddle;
 
-
     this.add.image(650, 300, 'world');
 
     groundmiddle = this.physics.add.staticGroup();
@@ -29,7 +28,6 @@ export class GameScene extends Phaser.Scene {
 
     mud = this.physics.add.staticGroup();
     mud.create(450, 568, 'mud').setScale(2).refreshBody();
-
 
     // Add player sprite.
     player = this.physics.add.sprite(100, 450, 'girl').setScale(2);
@@ -102,7 +100,6 @@ export class GameScene extends Phaser.Scene {
       player.setVelocityY(-750);
     }
   }
-
 
   collectTomato(player, tomato) {
     tomato.disableBody(true, true);

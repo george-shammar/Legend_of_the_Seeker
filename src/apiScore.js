@@ -13,7 +13,6 @@ const allScores = async () => {
   }
 };
 
-
 const recordScore = async (name, score) => {
   const params = {};
   params.user = name;
