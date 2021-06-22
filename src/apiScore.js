@@ -24,6 +24,7 @@ const recordScore = async (name, score) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(params),
+      mode: 'cors'
     });
     return response.json();
   } catch (error) {
