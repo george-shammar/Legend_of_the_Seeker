@@ -26,9 +26,9 @@ export default class GameOverScene extends Phaser.Scene {
       }
       recordScore(username, score);
     };
- 
+
     this.menuButton = new Button(this, 200, 500, 'blueButton1', 'blueButton2', 'Replay', 'Title');
- 
+
     this.leaderBoard = new Button(this, 1000, 500, 'blueButton1', 'blueButton2', 'Top Scores', 'Leaderboard');
   }
 }

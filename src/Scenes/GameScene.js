@@ -10,9 +10,8 @@ export class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
   }
-  
-  create() {
 
+  create() {
     /* eslint-disable prefer-const */
     let mud;
     let groundmiddle;

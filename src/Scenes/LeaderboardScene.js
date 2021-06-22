@@ -37,7 +37,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
     });
 
     let space = 40;
-    highestScores.forEach(element => {
+    highestScores.forEach((element) => {
       const eachPlayer = `${element.user}`;
       const eachScore = `${element.score}`;
       this.add.text(450, 50 + space, eachPlayer, {
