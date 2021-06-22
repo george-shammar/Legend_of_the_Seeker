@@ -52,7 +52,8 @@ npm install
 This command installs all the game dependencies. Once you complete all installations successfully, you're ready to play.
 
 - To start playing, run:
-``` npm start
+```
+npm start
 ```
 - The game will open up in your browser.
 
