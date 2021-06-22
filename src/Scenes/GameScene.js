@@ -10,8 +10,9 @@ export class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
   }
-
+  
   create() {
+
     /* eslint-disable prefer-const */
     let mud;
     let groundmiddle;
@@ -125,7 +126,8 @@ export class GameScene extends Phaser.Scene {
   hitBomb(player) {
     this.physics.pause();
     player.anims.play('turn');
-    this.scene.switch('BattleScene');
+    // this.scene.switch('BattleScene');
+    this.scene.switch('GameOver');
   }
 }
 

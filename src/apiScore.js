@@ -23,8 +23,7 @@ const recordScore = async (name, score) => {
     const response = await fetch(`${url}/games/${gameID}/scores/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(params),
-      mode: 'cors'
+      body: JSON.stringify(params)
     });
     return response.json();
   } catch (error) {
