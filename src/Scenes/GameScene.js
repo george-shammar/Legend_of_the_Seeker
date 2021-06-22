@@ -126,8 +126,7 @@ export class GameScene extends Phaser.Scene {
   hitBomb(player) {
     this.physics.pause();
     player.anims.play('turn');
-    // this.scene.switch('BattleScene');
-    this.scene.switch('GameOver');
+    this.scene.switch('BattleScene');
   }
 }
 

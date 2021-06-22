@@ -9,13 +9,13 @@ export default class TitleScene extends Phaser.Scene {
 
   create() {
     const resfreshSCore = () => {
-      if( window.localStorage )
+      if( window.localStorage ) 
       {
         if( !localStorage.getItem( 'firstLoad' ) )
         {
           localStorage[ 'firstLoad' ] = true;
           window.location.reload();
-        }
+        } 
         else
           localStorage.removeItem( 'firstLoad' );
       }
