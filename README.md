@@ -22,7 +22,7 @@ A warrior must seek and retrieve a lost treasure belonging to his village. In hi
 - Opengamearts.
 
 ## Live Game
-
+[Live](https://george-shammar.github.io/Legend_of_the_Seeker/)!!
 
 Visit the link above to play the game online or see the "Getting Started" section below to get a copy on your local computer.
 
