@@ -1,8 +1,7 @@
 import 'regenerator-runtime/runtime';
 
 const gameID = 'PvttOFDfJUi8zbItrwFO';
-const url = 'https://intense-beach-81881.herokuapp.com/https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
-
+const url = 'https://thingproxy.freeboard.io/fetch/https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const allScores = async () => {
   try {
     const rawScores = await fetch(`${url}/games/${gameID}/scores/`, {
