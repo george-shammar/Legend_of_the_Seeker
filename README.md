@@ -112,16 +112,13 @@ npm run test
 - Twitter: [@GeorgeShammar](https://twitter.com/GeorgeShammar)
 - LinkedIn: [George Gbenle](https://www.linkedin.com/in/georgegbenle/)
 
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 
 ## 📝 License
 
