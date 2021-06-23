@@ -9,7 +9,6 @@
     "watch": "webpack --watch",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --open"
-
   },
   "repository": {
     "type": "git",
