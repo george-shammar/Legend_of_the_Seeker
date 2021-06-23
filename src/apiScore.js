@@ -6,6 +6,7 @@ const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const allScores = async () => {
   try {
     const rawScores = await fetch(`${proxy}/${url}/games/${gameID}/scores/`, {
+      method: 'GET',
       mode: 'cors',
     });
     const rawData = await rawScores.json();
