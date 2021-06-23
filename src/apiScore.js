@@ -1,11 +1,11 @@
 import 'regenerator-runtime/runtime';
 
 const gameID = 'PvttOFDfJUi8zbItrwFO';
-const url = '/https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const url = 'https://intense-beach-81881.herokuapp.com/https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
 const allScores = async () => {
   try {
-    const rawScores = await fetch(`${url}/games/${gameID}/scores/`, {mode: 'cors'});
+    const rawScores = await fetch(`${url}/games/${gameID}/scores/`);
     const rawData = await rawScores.json();
     return rawData.result;
   } catch (error) {
