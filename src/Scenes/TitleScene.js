@@ -8,7 +8,6 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-
     // Instructions
     this.instr = new Button(this, config.width / 2, config.height / 2 - 200, 'blueButton1', 'blueButton2', 'Instructions', 'Instruction');
 
