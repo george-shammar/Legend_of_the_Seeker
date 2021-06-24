@@ -7,12 +7,7 @@ const allScores = async () => {
   try {
     const rawScores = await fetch(`${proxy}/${url}/games/${gameID}/scores/`, { 
       mode: 'cors',
-      method: 'GET',
-      headers: new Headers({
-        'Accept': 'application/json',
-        'Access-Control-Allow-Origin':'https://george-shammar.github.io/Legend_of_the_Seeker/',
-        'Content-Type': 'application/json',
-      })
+      method: 'GET'
      });
     const rawData = await rawScores.json();
     return rawData.result;
