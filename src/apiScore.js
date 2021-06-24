@@ -5,7 +5,15 @@ const proxy = 'https://thingproxy.freeboard.io/fetch';
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const allScores = async () => {
   try {
-    const rawScores = await fetch(`${proxy}/${url}/games/${gameID}/scores/`, { mode: 'cors' });
+    const rawScores = await fetch(`${proxy}/${url}/games/${gameID}/scores/`, { 
+      mode: 'cors',
+      method: 'GET',
+      headers: new Headers({
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin':'https://george-shammar.github.io/Legend_of_the_Seeker/',
+        'Content-Type': 'application/json',
+      })
+     });
     const rawData = await rawScores.json();
     return rawData.result;
   } catch (error) {
@@ -18,7 +26,7 @@ const recordScore = async (name, score) => {
   params.user = name;
   params.score = score;
   try {
-    const response = await fetch(`${url}/games/${gameID}/scores/`, {
+    const response = await fetch(`${proxy}/${url}/games/${gameID}/scores/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(params),
