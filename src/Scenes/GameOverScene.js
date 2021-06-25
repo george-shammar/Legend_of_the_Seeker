@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import { recordScore } from '../apiScore';
 import { score } from './GameScene';
 import form from '../scoreForm';
 import Button from '../Objects/Button';
@@ -24,7 +23,6 @@ export default class GameOverScene extends Phaser.Scene {
       if (this.userForm !== null) {
         this.userForm.remove();
       }
-      recordScore(username, score);
     };
 
     this.menuButton = new Button(this, 200, 500, 'blueButton1', 'blueButton2', 'Replay', 'Title');
