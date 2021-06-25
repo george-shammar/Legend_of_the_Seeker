@@ -25,9 +25,8 @@ export default class LeaderBoardScene extends Phaser.Scene {
     });
   }
 
-  displayHighestScores = async () => {
-    const data = await allScores();
-    const highestScores = data.sort((a, b) => b.score - a.score).slice(0, 10);
+  displayHighestScores = () => {
+    const highestScores = [{}]
 
     const header = 'Player                    Score';
     this.add.text(450, 50, header, {
