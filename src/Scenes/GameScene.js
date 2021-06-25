@@ -20,7 +20,7 @@ export class GameScene extends Phaser.Scene {
         } else localStorage.removeItem('firstLoad');
       }
     };
-  resfreshSCore();
+    resfreshSCore();
     /* eslint-disable prefer-const */
     let mud;
     let groundmiddle;
