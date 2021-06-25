@@ -26,7 +26,28 @@ export default class LeaderBoardScene extends Phaser.Scene {
   }
 
   displayHighestScores = () => {
-    const highestScores = [{}]
+    const highestScores = [
+                            { user: "Kevin", 
+                              score: "18000" },
+                            { score: "17200", 
+                            user: "Shayo" },
+                            { user: "papa", 
+                            score: "16800" },
+                            { score: "16400", 
+                            user: "Dennis" },
+                            { score: "14600", 
+                            user: "hajia" },
+                            { user: "Anonymous", 
+                            score: "13000" },
+                            { score: "12200", 
+                            user: "KinfyJ" },
+                            { score: "9900", 
+                            user: "Kalamazoo" },
+                            { user: "GeorgeShammar", 
+                            score: "9800" },
+                            { score: "9200", 
+                            user: "Kwame" }
+                          ]
 
     const header = 'Player                    Score';
     this.add.text(450, 50, header, {
