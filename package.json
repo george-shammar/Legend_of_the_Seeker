@@ -1,0 +1,47 @@
+{
+  "name": "legend_of_the_seeker",
+  "version": "1.0.0",
+  "description": "A phaser3 adventure game",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack --mode development",
+    "watch": "webpack --watch",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/george-shammar/Legend_of_the_Seeker.git"
+  },
+  "author": "George Gbenle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/george-shammar/Legend_of_the_Seeker/issues"
+  },
+  "homepage": "https://github.com/george-shammar/Legend_of_the_Seeker#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/runtime": "^7.14.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "jest": "^27.0.4",
+    "jest-fetch-mock": "^3.0.3",
+    "phaser": "^3.55.2",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "phaser": "^3.55.2",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
