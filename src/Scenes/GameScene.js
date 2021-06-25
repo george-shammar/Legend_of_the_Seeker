@@ -12,6 +12,15 @@ export class GameScene extends Phaser.Scene {
   }
 
   create() {
+    const resfreshSCore = () => {
+      if (window.localStorage) {
+        if (!localStorage.getItem('firstLoad')) {
+          localStorage.firstLoad = true;
+          window.location.reload();
+        } else localStorage.removeItem('firstLoad');
+      }
+    };
+  resfreshSCore();
     /* eslint-disable prefer-const */
     let mud;
     let groundmiddle;
