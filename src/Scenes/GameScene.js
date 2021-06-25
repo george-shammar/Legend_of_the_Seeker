@@ -25,7 +25,6 @@ export class GameScene extends Phaser.Scene {
     let mud;
     let groundmiddle;
 
-
     this.add.image(650, 300, 'world');
 
     groundmiddle = this.physics.add.staticGroup();
