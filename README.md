@@ -1,4 +1,4 @@
-# Legend_of_the_Seeker
+# MAGE_WARS
 A warrior must seek and retrieve a lost treasure belonging to his village. In his quest, he must avoid being hit by spikeballs and must also gather as much fruits (points) as possible to sustain his adventure. In the end, he must fight off the greatest villians of all, two fire-spitting dragons.
 
 ### Screenshots
