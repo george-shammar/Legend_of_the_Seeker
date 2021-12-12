@@ -1,16 +1,11 @@
 import 'regenerator-runtime/runtime';
 
 const gameID = 'PvttOFDfJUi8zbItrwFO';
-const proxy = 'https://thingproxy.freeboard.io/fetch';
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const url = 'https://thingproxy.freeboard.io/fetch/https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+
 const allScores = async () => {
   try {
-    const rawScores = await fetch(`${proxy}/${url}/games/${gameID}/scores/`, { 
-      mode: 'cors',
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json',
-                Accept: 'application/json' },
-     });
+    const rawScores = await fetch(`${url}/games/${gameID}/scores/`);
     const rawData = await rawScores.json();
     return rawData.result;
   } catch (error) {

@@ -1,4 +1,4 @@
-# Legend_of_the_Seeker
+# MAGE_WARS
 A warrior must seek and retrieve a lost treasure belonging to his village. In his quest, he must avoid being hit by spikeballs and must also gather as much fruits (points) as possible to sustain his adventure. In the end, he must fight off the greatest villians of all, two fire-spitting dragons.
 
 ### Screenshots
@@ -22,7 +22,7 @@ A warrior must seek and retrieve a lost treasure belonging to his village. In hi
 - Opengamearts.
 
 ## Live Game
-
+[Live](https://george-shammar.github.io/Legend_of_the_Seeker/)!!
 
 Visit the link above to play the game online or see the "Getting Started" section below to get a copy on your local computer.
 
@@ -112,16 +112,13 @@ npm run test
 - Twitter: [@GeorgeShammar](https://twitter.com/GeorgeShammar)
 - LinkedIn: [George Gbenle](https://www.linkedin.com/in/georgegbenle/)
 
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 
 ## 📝 License
 

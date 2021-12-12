@@ -19,6 +19,7 @@ export default class GameOverScene extends Phaser.Scene {
     this.submit = document.getElementById('click-submit');
 
     this.submit.onclick = () => {
+      /* eslint-disable no-unused-vars */
       const username = document.getElementById('score').value;
       if (this.userForm !== null) {
         this.userForm.remove();

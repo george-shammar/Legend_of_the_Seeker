@@ -29,7 +29,7 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
-    "html-webpack-plugin": "^5.3.2",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^27.0.4",
     "jest-fetch-mock": "^3.0.3",
     "phaser": "^3.55.2",
