@@ -8,7 +8,15 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-
+    // const resfreshSCore = () => {
+    //   if (window.localStorage) {
+    //     if (!localStorage.getItem('firstLoad')) {
+    //       localStorage.firstLoad = true;
+    //       window.location.reload();
+    //     } else localStorage.removeItem('firstLoad');
+    //   }
+    // };
+    // resfreshSCore();
     // Instructions
     this.instr = new Button(this, config.width / 2, config.height / 2 - 200, 'blueButton1', 'blueButton2', 'Instructions', 'Instruction');
 
