@@ -48,7 +48,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
                             user: "Kwame" }
                           ]
 
-    const header = 'Player                    Score';
+    const header = 'Player           Score';
     this.add.text(450, 50, header, {
       fontSize: 28,
       fontStyle: 'bold',
